@@ -2,4 +2,4 @@
 
 This is my Prog272 repository.
 
-add to next
+add to Lubuntu 
