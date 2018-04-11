@@ -2,8 +2,9 @@
 
 This is my Prog272 repository.
 
-<<<<<<< HEAD
 Add to Cloud 9
-=======
+
 add to Pristine
+
+add to Lubuntu 
 
