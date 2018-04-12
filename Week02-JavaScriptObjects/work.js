@@ -6,13 +6,16 @@ function divider(title){
 
 var MyObject1={
 	firstName: "George",
-	lastName:"Washington"
+	lastName:"Washington",
+	fullName: function(){"use strict";
+		return this.firstName+" "+this.lastName;
+		}
 	};
 
 divider("Person")
 console.log(MyObject1.firstName);
 console.log(MyObject1.lastName);
-console.log(MyObject1.firstName+" "+MyObject1.lastName);
+console.log(MyObject1.fullName());
 
 var MyObject2={
 	operand01: 6,
