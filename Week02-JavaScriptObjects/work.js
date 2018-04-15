@@ -1,30 +1,45 @@
+//objects practice
+//create person object and caculator object
 function divider(title){
 	console.log("===================");
     console.log(title);
     console.log("===================");
 	}
 
-var MyObject1={
-	firstName: "George",
-	lastName:"Washington",
+var person={
+	firstName: "Chunyan",
+	lastName:"Li",
 	fullName: function(){"use strict";
 		return this.firstName+" "+this.lastName;
 		}
 	};
 
-divider("Person")
-console.log(MyObject1.firstName);
-console.log(MyObject1.lastName);
-console.log(MyObject1.fullName());
+divider("Person");
+console.log(person.firstName);
+console.log(person.lastName);
+console.log(person.fullName());
 
-var MyObject2={
-	operand01: 6,
-	operand02: 10
+var caculator={
+	operand01: -1,
+	operand02: -1,
+	add: function(){"use strict";
+		return this.operand01+this.operand02;		
+		},
+	substract: function(){"use strict";
+		return this.operand01-this.operand02;
+		}
 	};
+	
+caculator.multiply=function(){"use strict";
+	return this.operand01*this.operand02;
+	};
+	
+caculator.operand01 = person.firstName.length;
+caculator.operand02 = person.lastName.length;
 
 divider("Caculator");
-console.log("operand01="+MyObject2.operand01);
-console.log("operand02="+MyObject2.operand02);
-console.log("Add: "+(MyObject2.operand01+MyObject2.operand02));
-console.log("Subtract: "+(MyObject2.operand01-MyObject2.operand02));
-console.log("Multiply: "+(MyObject2.operand01*MyObject2.operand02));
+console.log("operand01="+caculator.operand01);
+console.log("operand02="+caculator.operand02);
+console.log("Add: "+caculator.add());
+console.log("Subtract: "+caculator.substract());
+console.log("Multiply: "+caculator.multiply());
