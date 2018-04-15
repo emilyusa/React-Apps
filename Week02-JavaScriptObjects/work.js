@@ -1,5 +1,6 @@
 //objects practice
 //create person object and caculator object
+
 function divider(title){
 	console.log("===================");
     console.log(title);
