@@ -1,0 +1,17 @@
+{
+  "name": "week03-ecmascript",
+  "version": "1.0.0",
+  "description": "prog272-chunyan-2018/week03-ecmascript",
+  "main": "InClass.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/.bin/babel InClass.js -d bundle"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-1": "^6.24.1"
+  }
+}
