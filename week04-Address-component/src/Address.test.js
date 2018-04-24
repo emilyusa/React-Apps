@@ -6,7 +6,7 @@ import {configure,shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 configure({adapter:new Adapter()});
 
-describe('jest test', function () {
+describe('Address test', function () {
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
@@ -17,6 +17,8 @@ describe('jest test', function () {
     it('renders and reads firstName before click', () => {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const welcome = <p className="App-intro">firstName:unknown</p>;
+        const firstParagraph=wrapper.find('p').first().debug();
+        console.log(firstParagraph);
         expect(wrapper.contains(welcome)).toBe(true);
     });
 
@@ -90,7 +92,10 @@ describe('jest test', function () {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const address = <p className="App-intro">Postal:98006</p>;
         wrapper.find('#setAddress').simulate('click');
+        const lastParagraph=wrapper.find('p').last().debug();
+        console.log(lastParagraph);
         expect(wrapper.contains(address)).toBe(true);
     });
+
 
 });
