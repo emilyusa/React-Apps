@@ -25,30 +25,40 @@ describe('Address test', function () {
     it('renders and reads lastName before click', () => {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const welcome = <p className="App-intro">lastName:unknown</p>;
+        const selectParagraph=wrapper.find('div').childAt(2).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(welcome)).toBe(true);
     });
 
     it('renders and reads Street before click', () => {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const welcome = <p className="App-intro">Street:unknown</p>;
+        const selectParagraph=wrapper.find('div').childAt(3).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(welcome)).toBe(true);
     });
 
     it('renders and reads City before click', () => {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const welcome = <p className="App-intro">City:unknown</p>;
+        const selectParagraph=wrapper.find('div').childAt(4).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(welcome)).toBe(true);
     });
 
     it('renders and reads State before click', () => {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const welcome = <p className="App-intro">State:unknown</p>;
+        const selectParagraph=wrapper.find('div').childAt(5).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(welcome)).toBe(true);
     });
 
     it('renders and reads Postal before click', () => {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const welcome = <p className="App-intro">Postal:unknown</p>;
+        const selectParagraph=wrapper.find('div').childAt(6).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(welcome)).toBe(true);
     });
 
@@ -57,6 +67,8 @@ describe('Address test', function () {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const address = <p className="App-intro">firstName:Chunyan</p>;
         wrapper.find('#setAddress').simulate('click');
+        const selectParagraph=wrapper.find('div').childAt(1).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(address)).toBe(true);
     });
 
@@ -64,6 +76,8 @@ describe('Address test', function () {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const address = <p className="App-intro">lastName:Li</p>;
         wrapper.find('#setAddress').simulate('click');
+        const selectParagraph=wrapper.find('div').childAt(2).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(address)).toBe(true);
     });
 
@@ -71,6 +85,8 @@ describe('Address test', function () {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const address = <p className="App-intro">Street:4190 129th PL SE</p>;
         wrapper.find('#setAddress').simulate('click');
+        const selectParagraph=wrapper.find('div').childAt(3).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(address)).toBe(true);
     });
 
@@ -78,6 +94,8 @@ describe('Address test', function () {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const address = <p className="App-intro">City:Bellevue</p>;
         wrapper.find('#setAddress').simulate('click');
+        const selectParagraph=wrapper.find('div').childAt(4).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(address)).toBe(true);
     });
 
@@ -85,6 +103,8 @@ describe('Address test', function () {
         const wrapper = shallow(<Address addressList={addresses}/>);
         const address = <p className="App-intro">State:WA</p>;
         wrapper.find('#setAddress').simulate('click');
+        const selectParagraph=wrapper.find('div').childAt(5).debug();
+        console.log(selectParagraph);
         expect(wrapper.contains(address)).toBe(true);
     });
 
