@@ -22,7 +22,7 @@ class AddressShow extends Component {
         this.log("SHOW ADDRESS RENDER");
         return (
 
-            <div className="App">
+            <div className="App">cd
                 <p className="App-intro">firstName:{this.props.address.firstName}</p>
                 <p className="App-intro">lastName:{this.props.address.lastName}</p>
                 <p className="App-intro">Street:{this.props.address.street}</p>

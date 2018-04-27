@@ -29,6 +29,7 @@ class Address extends Component {
         if (!this.quiet){console.log("ADDRESS RENDER");}
         return (
             <div className="App">
+                <hr></hr>
                 <AddressShow
                     address={this.state.address}
                     onAddressChange={this.onAddressChange}
