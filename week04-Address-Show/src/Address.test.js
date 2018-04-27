@@ -1,101 +1,90 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Address from './components/Address';
+import AddressShow from './components/AddressShow';
 import addresses from './address-list';
 import {configure,shallow} from 'enzyme';
+import {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import './App.css';
 configure({adapter:new Adapter()});
 
-describe('Address test', function () {
+const address = addresses[0];
 
-    it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(<Address addressList={addresses}/>, div);
-        ReactDOM.unmountComponentAtNode(div);
-    });
+describe('Address mount Suite', function () {
 
-    it('renders and reads firstName before click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const welcome = <p className="App-intro">firstName:unknown</p>;
-        const firstParagraph=wrapper.find('p').first().debug();
-        console.log(firstParagraph);
-        expect(wrapper.contains(welcome)).toBe(true);
-    });
+    var quiet = true;
 
-    it('renders and reads lastName before click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const welcome = <p className="App-intro">lastName:unknown</p>;
-        expect(wrapper.contains(welcome)).toBe(true);
-    });
+    const getIndex = function(wrapper, index,talkToMe) {
+        if (!quiet || talkToMe) {
+            const container= wrapper.find('div');
+            const ninep = container.childAt(index).debug();
+            console.log('NINEP:', ninep);
+        }
+    };
 
-    it('renders and reads Street before click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const welcome = <p className="App-intro">Street:unknown</p>;
-        expect(wrapper.contains(welcome)).toBe(true);
-    });
+    const defaultFieldTest = (name, index,talkToMe) => {
+        const wrapper = mount((<AddressShow address={address}/>));
+        const welcome = <p className="App-intro">{name}</p>;
+        getIndex(wrapper, index,talkToMe);
+        expect(wrapper.contains(welcome)).toEqual(true);
+    };
 
-    it('renders and reads City before click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const welcome = <p className="App-intro">City:unknown</p>;
-        expect(wrapper.contains(welcome)).toBe(true);
-    });
-
-    it('renders and reads State before click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const welcome = <p className="App-intro">State:unknown</p>;
-        expect(wrapper.contains(welcome)).toBe(true);
-    });
-
-    it('renders and reads Postal before click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const welcome = <p className="App-intro">Postal:unknown</p>;
-        expect(wrapper.contains(welcome)).toBe(true);
-    });
-
-
-    it('renders state of firstName paragraph after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const address = <p className="App-intro">firstName:Chunyan</p>;
+    const afterClickFieldTest = (name, index, talkToMe) => {
+        const wrapper = mount(<Address address={address}/>);
+        const patty = <p className="App-intro">{name}</p>;
         wrapper.find('#setAddress').simulate('click');
-        expect(wrapper.contains(address)).toBe(true);
+        getIndex(wrapper, index, talkToMe);
+        expect(wrapper.contains(patty)).toEqual(true);
+    };
+
+    it('renders and displays the default first name', () => {
+        defaultFieldTest('firstName:unknown', 0);
     });
 
-    it('renders state of lastName paragraph after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const address = <p className="App-intro">lastName:Li</p>;
-        wrapper.find('#setAddress').simulate('click');
-        expect(wrapper.contains(address)).toBe(true);
+    it('renders and displays the default last name', () => {
+        defaultFieldTest('lastName:unknown', 1);
     });
 
-    it('renders state of street paragraph after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const address = <p className="App-intro">Street:4190 129th PL SE</p>;
-        wrapper.find('#setAddress').simulate('click');
-        expect(wrapper.contains(address)).toBe(true);
+    it('renders and displays the default street', () => {
+        defaultFieldTest('Street:unknown', 2);
     });
 
-    it('renders state of city paragraph after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const address = <p className="App-intro">City:Bellevue</p>;
-        wrapper.find('#setAddress').simulate('click');
-        expect(wrapper.contains(address)).toBe(true);
+    it('renders and displays the default city', () => {
+        defaultFieldTest('City:unknown', 3);
     });
 
-    it('renders state of state paragraph after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const address = <p className="App-intro">State:WA</p>;
-        wrapper.find('#setAddress').simulate('click');
-        expect(wrapper.contains(address)).toBe(true);
+    it('renders and displays the default state', () => {
+        defaultFieldTest('State:unknown', 4);
     });
 
-    it('renders state of postal paragraph after button click', () => {
-        const wrapper = shallow(<Address addressList={addresses}/>);
-        const address = <p className="App-intro">Postal:98006</p>;
-        wrapper.find('#setAddress').simulate('click');
-        const lastParagraph=wrapper.find('p').last().debug();
-        console.log(lastParagraph);
-        expect(wrapper.contains(address)).toBe(true);
+    it('renders and displays the default postal', () => {
+        defaultFieldTest('Postal:unknown', 5);
     });
 
+    it('renders and displays the after click first name', () => {
+        afterClickFieldTest('firstName:Chunyan', 0);
+    });
+
+    it('renders and displays the after click last name', () => {
+        afterClickFieldTest('lastName:Li', 1);
+    });
+
+    it('renders and displays the after click street', () => {
+        afterClickFieldTest('Street:4190 129th PL SE', 2);
+    });
+
+    it('renders and displays the after click city', () => {
+        afterClickFieldTest('City:Bellevue', 3);
+    });
+
+    it('renders and displays the after click state', () => {
+        afterClickFieldTest('State:WA', 4);
+    });
+
+    it('renders and displays the after click postal', () => {
+        afterClickFieldTest('Postal:98006', 5);
+    });
 
 });
+
