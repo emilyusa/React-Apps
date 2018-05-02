@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,button } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default class App extends React.Component {
 
@@ -10,21 +10,21 @@ export default class App extends React.Component {
     };
 
     fetchMicro=()=>{
-        console.log('fetchAddress in console.');
+        console.log('fetchMicro in console.');
         const that=this;
 
         const ip='ccalvert.com';
-        fetch('http://' + ip + ':30027/all-data')
+        fetch('http://' + ip + ':30027/you-rang')
             .then((response) => response.json())
             .then(function(result) {
-                //this.collection = result.allData;
+
                 console.log(result);
                 that.setState({
                     result:result.result
 
                 });
             }).catch(function(ex) {
-            that.setState({foo: 'qux error'});
+            //that.setState({foo: 'qux error'});
         });
 
     };
@@ -41,8 +41,8 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Prog 272 Chunyan!</Text>
-        <Text>this.state.foo</Text>
-        <Text>this.state.result</Text>
+        <Text>{this.state.foo}</Text>
+        <Text>{this.state.result}</Text>
           <Button
               onPress={this.fetchAddress}
               title="Get Data"
@@ -51,7 +51,7 @@ export default class App extends React.Component {
           />
           <Button
               onPress={this.fetchMicro}
-              title="Get Data"
+              title="Get Micro"
               color="#841584"
               accessibilityLabel="Learn more about this purple button"
           />
