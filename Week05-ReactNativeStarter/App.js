@@ -24,7 +24,7 @@ export default class App extends React.Component {
 
                 });
             }).catch(function(ex) {
-            //that.setState({foo: 'qux error'});
+                that.setState({foo: 'qux error'});
         });
 
     };
