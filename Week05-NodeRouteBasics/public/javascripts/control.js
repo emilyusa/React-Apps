@@ -43,46 +43,33 @@ function getFeetInMile() {
 // get
 
 window.onload=function(){
-    $("#calculateFeetFromMiles").click(transToFeet);
-
+    $("#calculateFeet").click(transTofeet);
 }
 
-const encodeParams = (url, params) => {
-    const encodeUri = encodeURIComponent;
-    return url + '?' + Object.keys(params)
-        .map(key => encodeUri(key) + '=' + encodeUri(params[key]))
-        .join('&');
-};
+function transTofeet() {
 
+    const miles = document.getElementById('userInput');
+    console.log('userInput is: ',userInput);
 
-function getParams(userInput) {
-
-    const params = {
-        "userInput": userInput
-
+    var requestQuery = {
+        user: miles,
     };
-    return {userInput, params};
-}
 
-function transToFeet() {
-
-    const userInput = 2;
-        //document.getElementById('userInput').value;
-
-    const url = encodeParams('/calculateFeetFromMiles', getParams(userInput));
-    console.log('transToFeet function is called',url);
-    fetch(url)
-        .then((checkCall) => {
-            return checkCall.json();
+    $.getJSON('/calculateFeet', requestQuery, function (result) {
+        elf.display.showApacheFiles(result.htmlFilesWritten, result.destinationDir);
+        elf.display.fillDisplayArea(JSON.stringify(result, null, 4));
+        console.log(result);
+    }).done(function () {
+        elf.display.showDebug('Walk loaded second success');
+    })
+        .fail(function (jqxhr, textStatus, error) {
+            elf.display.showDebug('Walk loaded error: ' + jqxhr.status + ' ' + textStatus + ' ' + error);
         })
-        .then((data) => {
-            //console.log("data.result is: ",data.result);
-            const transResult = userInput + " miles equals " + data.result + " feet";
-            $("#displayFeetTrans").html(JSON.stringify(transResult));
-        })
-        .catch((error) => {
-            console.log(error);
+        .always(function () {
+            elf.display.showDebug('Walk loaded complete');
         });
+
+
 
 }
 
@@ -96,7 +83,6 @@ function getRadius(radius) {
 
     const params = {
         "radius": radius,
-
     };
     return {radius, params};
 }

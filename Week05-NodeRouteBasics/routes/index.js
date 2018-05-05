@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) { 'use strict';
   res.render('index', { title: 'NodeRouteBasics Chunyan' });
@@ -23,15 +24,12 @@ router.get('/getFeetInMile', function(req, res, next) { 'use strict';
 });
 
 /*handle get*/
-var calculateFeetFromMiles  = require('../source/CalculateFeetFromMiles');
 
-router.get('/calculateFeetFromMiles', function(request, response) {
+router.get('/calculateFeet', function(request, response) {
     'use strict';
-    console.log('router calculateFeetFromMiles is called:', request);
-
-    var miles = parseInt(request.query.userInput);
-    var result = calculateFeetFromMiles.myObject.transToFeet(miles);
-
+    console.log('calculateFeet', request.query);
+    var miles = parseInt(request.query.user);
+    var result=miles*5280;
 
     response.send({
         "result": result
