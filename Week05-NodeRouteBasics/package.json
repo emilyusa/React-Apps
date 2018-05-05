@@ -13,6 +13,8 @@
     "express": "~4.16.3",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
+    "query": "^0.2.0",
+    "query-string": "^6.1.0",
     "serve-favicon": "~2.5.0"
   },
   "devDependencies": {

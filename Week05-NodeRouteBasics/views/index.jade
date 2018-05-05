@@ -5,5 +5,24 @@ block content
   p Welcome to #{title}
 
   button#search Search
-
   pre#displaySearch
+  br
+
+  button#getFeetInMile  GetFeetInMile
+  pre#displayOneMile
+  br
+
+
+  form(name="input", action="html_form_action.asp", method="get")
+      |User Input:
+      input(type="text", name="user", id="userInput")
+  br
+
+  button#calculateFeetFromMiles  CalculateFeetFromMiles
+  pre#displayFeetTrans
+  br
+
+  button#calculateCircumference  CalculateCircumference
+  pre#displayCircumTrans
+  br
+
