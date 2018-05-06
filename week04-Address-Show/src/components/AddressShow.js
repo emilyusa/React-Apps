@@ -4,12 +4,6 @@ import '../App.css';
 
 class AddressShow extends Component {
 
-    constructor(props) {
-        super(props);
-        this.quiet = false;
-        this.log('SHOW ADDRESS CONSTRUCTOR',this.props.address);
-    }
-
     log(message, message2='', message3=''){
         if (!this.quiet){
             const label = this.constructor.name + ': ';

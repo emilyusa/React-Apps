@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Address from './components/Address';
-import AddressShow from './components/AddressShow';
 import addresses from './address-list';
 import {configure,shallow} from 'enzyme';
 import {mount} from 'enzyme';
@@ -11,79 +10,96 @@ configure({adapter:new Adapter()});
 
 const address = addresses[0];
 
-describe('Address mount Suite', function () {
+describe('Address tests',  function() {
 
-    var quiet = true;
-
-    const getIndex = function(wrapper, index,talkToMe) {
-        if (!quiet || talkToMe) {
-            const container= wrapper.find('div');
-            const ninep = container.childAt(index).debug();
-            console.log('NINEP:', ninep);
-        }
-    };
-
-    const defaultFieldTest = (name, index,talkToMe) => {
-        const wrapper = mount((<AddressShow address={address}/>));
-        const welcome = <p className="App-intro">{name}</p>;
-        getIndex(wrapper, index,talkToMe);
-        expect(wrapper.contains(welcome)).toEqual(true);
-    };
-
-    const afterClickFieldTest = (name, index, talkToMe) => {
-        const wrapper = mount(<Address address={address}/>);
-        const patty = <p className="App-intro">{name}</p>;
-        wrapper.find('#setAddress').simulate('click');
-        getIndex(wrapper, index, talkToMe);
-        expect(wrapper.contains(patty)).toEqual(true);
-    };
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<Address/>, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
 
     it('renders and displays the default first name', () => {
-        defaultFieldTest('firstName:unknown', 0);
+        const wrapper = shallow(<Address/>);
+        expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('unknown');
+    });
+
+    it('renders state of firstName after button click', () => {
+        const wrapper = shallow(<Address addressList={addresses}/>);
+        wrapper.instance().setAddress();
+        setImmediate(() => {
+            wrapper.update();
+            expect(wrapper.find('AddressShow').prop('address').firstName).toEqual('Chunyan');
+        });
     });
 
     it('renders and displays the default last name', () => {
-        defaultFieldTest('lastName:unknown', 1);
+        const wrapper = shallow(<Address/>);
+        expect(wrapper.find('AddressShow').prop('address').lastName).toEqual('unknown');
+    });
+
+    it('renders state of lastName after button click', () => {
+        const wrapper = shallow(<Address addressList={addresses}/>);
+        wrapper.instance().setAddress();
+        setImmediate(() => {
+            wrapper.update();
+            expect(wrapper.find('AddressShow').prop('address').lastName).toEqual('Li');
+        });
     });
 
     it('renders and displays the default street', () => {
-        defaultFieldTest('Street:unknown', 2);
+        const wrapper = shallow(<Address/>);
+        expect(wrapper.find('AddressShow').prop('address').street).toEqual('unknown');
+    });
+
+    it('renders state of street after button click', () => {
+        const wrapper = shallow(<Address addressList={addresses}/>);
+        wrapper.instance().setAddress();
+        setImmediate(() => {
+            wrapper.update();
+            expect(wrapper.find('AddressShow').prop('address').street).toEqual('4190 129th PL SE');
+        });
     });
 
     it('renders and displays the default city', () => {
-        defaultFieldTest('City:unknown', 3);
+        const wrapper = shallow(<Address/>);
+        expect(wrapper.find('AddressShow').prop('address').city).toEqual('unknown');
     });
 
-    it('renders and displays the default state', () => {
-        defaultFieldTest('State:unknown', 4);
+    it('renders state of city after button click', () => {
+        const wrapper = shallow(<Address addressList={addresses}/>);
+        wrapper.instance().setAddress();
+        setImmediate(() => {
+            wrapper.update();
+            expect(wrapper.find('AddressShow').prop('address').city).toEqual('Bellevue');
+        });
+    });
+
+    it('renders and displays the default State', () => {
+        const wrapper = shallow(<Address/>);
+        expect(wrapper.find('AddressShow').prop('address').somestate).toEqual('unknown');
+    });
+
+    it('renders state of State after button click', () => {
+        const wrapper = shallow(<Address addressList={addresses}/>);
+        wrapper.instance().setAddress();
+        setImmediate(() => {
+            wrapper.update();
+            expect(wrapper.find('AddressShow').prop('address').somestate).toEqual('WA');
+        });
     });
 
     it('renders and displays the default postal', () => {
-        defaultFieldTest('Postal:unknown', 5);
+        const wrapper = shallow(<Address/>);
+        expect(wrapper.find('AddressShow').prop('address').postal).toEqual('unknown');
     });
 
-    it('renders and displays the after click first name', () => {
-        afterClickFieldTest('firstName:Chunyan', 0);
-    });
-
-    it('renders and displays the after click last name', () => {
-        afterClickFieldTest('lastName:Li', 1);
-    });
-
-    it('renders and displays the after click street', () => {
-        afterClickFieldTest('Street:4190 129th PL SE', 2);
-    });
-
-    it('renders and displays the after click city', () => {
-        afterClickFieldTest('City:Bellevue', 3);
-    });
-
-    it('renders and displays the after click state', () => {
-        afterClickFieldTest('State:WA', 4);
-    });
-
-    it('renders and displays the after click postal', () => {
-        afterClickFieldTest('Postal:98006', 5);
+    it('renders state of postal after button click', () => {
+        const wrapper = shallow(<Address addressList={addresses}/>);
+        wrapper.instance().setAddress();
+        setImmediate(() => {
+            wrapper.update();
+            expect(wrapper.find('AddressShow').prop('address').postal).toEqual('98006');
+        });
     });
 
 });

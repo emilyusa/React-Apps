@@ -16,7 +16,7 @@ class Address extends Component {
         this.quiet = true;
     }
 
-    onAddressChange=(event)=>{
+    setAddress=(event)=>{
         this.addressIndex=1;
         const address=addresses[this.addressIndex];
         console.log('click showAddrees button');
@@ -28,13 +28,13 @@ class Address extends Component {
     render() {
         if (!this.quiet){console.log("ADDRESS RENDER");}
         return (
-            <div className="App">
-                <hr></hr>
+            <div>
                 <AddressShow
                     address={this.state.address}
-                    onAddressChange={this.onAddressChange}
+                    onAddressChange={this.setAddress}
                 />
             </div>
+
         );
     }
 }
