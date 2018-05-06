@@ -2,6 +2,9 @@
 
 window.onload=function(){
     $("#search").click(callServerWithoutParms);
+    $("#getFeetInMile").click(getFeetInMile);
+    $("#calculateFeetFromMiles").click(transTofeet);
+    $("#calculateCircumference").click(transToCircum);
 }
 
 
@@ -20,17 +23,13 @@ function callServerWithoutParms() {
 }
 
 
-window.onload=function(){
-    $("#getFeetInMile").click(getFeetInMile);
-}
-
 function getFeetInMile() {
 
     fetch('/getFeetInMile')
         .then((response) => response.json())
         .then((response) => {
             console.log(response);
-            $("#displayOneMile").html(JSON.stringify(response,null,4));
+            $("#displayOneMile").html(JSON.stringify(response.result,null,4));
 
         })
         .catch((ex) => {
@@ -40,44 +39,26 @@ function getFeetInMile() {
 
 
 
-// get
-
-window.onload=function(){
-    $("#calculateFeet").click(transTofeet);
-}
+/* get in client*/
 
 function transTofeet() {
 
-    const miles = document.getElementById('userInput');
-    console.log('userInput is: ',userInput);
+    const miles = document.getElementById('userInput').value;
 
-    var requestQuery = {
-        user: miles,
-    };
+    fetch('/calculateFeetFromMiles' + '?miles=' + miles)
+        .then((response) => response.json())
+        .then((response) => {
 
-    $.getJSON('/calculateFeet', requestQuery, function (result) {
-        elf.display.showApacheFiles(result.htmlFilesWritten, result.destinationDir);
-        elf.display.fillDisplayArea(JSON.stringify(result, null, 4));
-        console.log(result);
-    }).done(function () {
-        elf.display.showDebug('Walk loaded second success');
-    })
-        .fail(function (jqxhr, textStatus, error) {
-            elf.display.showDebug('Walk loaded error: ' + jqxhr.status + ' ' + textStatus + ' ' + error);
+            const feet=miles+' miles equal '+response.result+' feet';
+            $("#displayFeetTrans").html(JSON.stringify(feet,null,4));
         })
-        .always(function () {
-            elf.display.showDebug('Walk loaded complete');
-        });
-
-
-
+        .catch((ex) => {
+            console.log(ex);
+        })
 }
 
-//post
 
-window.onload=function(){
-    $("#calculateCircumference").click(transToCircum);
-}
+/*post inclient*/
 
 function getRadius(radius) {
 

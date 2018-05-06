@@ -23,20 +23,19 @@ router.get('/getFeetInMile', function(req, res, next) { 'use strict';
     });
 });
 
-/*handle get*/
+/*handle get in server */
 
-router.get('/calculateFeet', function(request, response) {
+router.get('/calculateFeetFromMiles', function(request, response) {
     'use strict';
-    console.log('calculateFeet', request.query);
-    var miles = parseInt(request.query.user);
-    var result=miles*5280;
+    console.log('server side calculateFeetFromMiles called', request.query);
+    const result=parseInt(request.query.miles)*5280;
 
     response.send({
-        "result": result
+        result: result
     });
 });
 
-/*handle post*/
+/*handle post in server*/
 var calculateCircum  = require('./utils');
 
 router.post('/calculateCircumference', function(request, response) {

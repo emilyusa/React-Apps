@@ -13,16 +13,15 @@ block content
   br
 
 
-  form(name="input", action="html_form_action.asp", method="get")
-      |User Input:
-      input(type="text", name="user", id="userInput")
+  input#userInput(type="number")
+  br
   br
 
-  button#calculateFeet  CalculateFeet
+  button#calculateFeetFromMiles  CalculateFeetFromMiles
   pre#displayFeetTrans
   br
 
   button#calculateCircumference  CalculateCircumference
   pre#displayCircumTrans
-  br
+
 
