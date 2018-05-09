@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Address from './components/Address';
-import addresses from './address-list';
+import Address from '../components/Address';
+import addresses from '../address-list';
 import {configure,shallow} from 'enzyme';
 import {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import './App.css';
+
 configure({adapter:new Adapter()});
 
 const address = addresses[0];
