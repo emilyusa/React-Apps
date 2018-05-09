@@ -1,0 +1,20 @@
+{
+  "name": "week06-git-explore",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "DEBUG=firebase-express:server nodemon ./bin/www",
+    "bundle": "node_modules/.bin/webpack --watch",
+    "lint": "./node_modules/.bin/eslint ."
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.7.0"
+  }
+}
