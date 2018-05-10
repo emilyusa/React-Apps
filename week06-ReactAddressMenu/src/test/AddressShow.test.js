@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import Address from '../components/Address';
 import AddressShow from '../components/AddressShow';
 import addresses from '../address-list';
-import {configure,shallow} from 'enzyme';
-import {mount} from 'enzyme';
+import {configure,shallow,mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({adapter:new Adapter()});
@@ -30,7 +29,7 @@ describe('AddressShow Shallow Suite', function () {
         if (!quiet || talkToMe) {
             const container= wrapper.find('div');
             const ninep = container.childAt(index).debug();
-            console.log('NINEP:', ninep);
+
         }
     };
 
@@ -44,7 +43,7 @@ describe('AddressShow Shallow Suite', function () {
     const afterClickFieldTest = (name, index, talkToMe) => {
         const wrapper = mount(<Address address={address}/>);
         const patty = <p className="App-intro">{name}</p>;
-        //console.log("firstName is : ----",patty);
+
         wrapper.find('#setAddress').simulate('click');
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(patty)).toEqual(true);

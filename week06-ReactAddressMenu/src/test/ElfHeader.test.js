@@ -2,95 +2,56 @@ import { MemoryRouter } from 'react-router';
 import {mount} from 'enzyme';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../components/App';
-import Address from '../components/Address';
-import GetFile from '../components/GetFile';
 import {configure,shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import ElfDebugEnzyme from '../ElfDebugEnzyme';
+import ElfHeader from "../components/ElfHeader";
+import { Link } from 'react-router-dom';
 
 
 configure({adapter:new Adapter()});
 
-const elfDebug = new ElfDebugEnzyme(true, 'Address.test.js');
+describe('ElfHeader test', function () {
 
-fit('renders with App firstName', () => {
+
+test('ElfHeader shows on home page', () => {
     const wrapper = mount(
-        <MemoryRouter initialEntries={['/']}>
-            <App />
-        </MemoryRouter>
+         <MemoryRouter initialEntries={['/']}>
+             <ElfHeader />
+         </MemoryRouter>
     );
-    elfDebug.getAll(wrapper);
-    const eightSign = <p className='App-intro'>firstName:unknown</p>;
-    expect(wrapper.contains(eightSign)).toEqual(true);
+
+    expect(wrapper.find(ElfHeader)).toHaveLength(1);
+
 });
 
-fit('renders with App lastName', () => {
-    const wrapper = mount(
-        <MemoryRouter initialEntries={['/']}>
-            <App />
-        </MemoryRouter>
-    );
-    elfDebug.getAll(wrapper);
-    const eightSign = <p className='App-intro'>lastName:unknown</p>;
-    expect(wrapper.contains(eightSign)).toEqual(true);
-});
-
-fit('renders with App Street', () => {
-    const wrapper = mount(
-        <MemoryRouter initialEntries={['/']}>
-            <App />
-        </MemoryRouter>
-    );
-    elfDebug.getAll(wrapper);
-    const eightSign = <p className='App-intro'>Street:unknown</p>;
-    expect(wrapper.contains(eightSign)).toEqual(true);
-});
-
-fit('renders with App City', () => {
-    const wrapper = mount(
-        <MemoryRouter initialEntries={['/']}>
-            <App />
-        </MemoryRouter>
-    );
-    elfDebug.getAll(wrapper);
-    const eightSign = <p className='App-intro'>City:unknown</p>;
-    expect(wrapper.contains(eightSign)).toEqual(true);
-});
-
-fit('renders with App State', () => {
-    const wrapper = mount(
-        <MemoryRouter initialEntries={['/']}>
-            <App />
-        </MemoryRouter>
-    );
-    elfDebug.getAll(wrapper);
-    const eightSign = <p className='App-intro'>State:unknown</p>;
-    expect(wrapper.contains(eightSign)).toEqual(true);
-});
-
-fit('renders with App Postal', () => {
-    const wrapper = mount(
-        <MemoryRouter initialEntries={['/']}>
-            <App />
-        </MemoryRouter>
-    );
-    elfDebug.getAll(wrapper);
-    const eightSign = <p className='App-intro'>Postal:unknown</p>;
-    expect(wrapper.contains(eightSign)).toEqual(true);
-});
-
-
-
-const elfDebugGetFile = new ElfDebugEnzyme(true, 'GetFile.test.js');
-
-fit('renders with App firstName', () => {
+test('ElfHeader shows one /get-file page', () => {
     const wrapper = mount(
         <MemoryRouter initialEntries={['/get-file']}>
-            <GetFile />
+            <ElfHeader />
         </MemoryRouter>
     );
-    elfDebugGetFile.getAll(wrapper);
-    const eightSign = <p className='App-intro'>file:unknown</p>;
-    expect(wrapper.contains(eightSign)).toEqual(true);
+
+    expect(wrapper.find(ElfHeader)).toHaveLength(1);
+});
+
+test('ElfHeader has Address link', () => {
+    const wrapper = shallow(
+            <ElfHeader />
+    );
+
+    const mylink=<Link to="/">Address</Link>;
+    expect(wrapper.contains(mylink)).toBe(true);
+
+});
+
+test('ElfHeader has GetFile link', () => {
+    const wrapper = shallow(
+        <ElfHeader />
+    );
+
+    const mylink=<Link to="/get-file">Get File</Link>;
+    expect(wrapper.contains(mylink)).toBe(true);
+
+});
+
 });

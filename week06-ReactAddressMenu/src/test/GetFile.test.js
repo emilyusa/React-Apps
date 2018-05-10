@@ -3,9 +3,14 @@ import ReactDOM from 'react-dom';
 import {configure,shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import GetFile from '../components/GetFile';
+import ElfDebugEnzyme from "../ElfDebugEnzyme";
+import { MemoryRouter } from 'react-router';
+import {mount} from 'enzyme';
 
 
 configure({adapter:new Adapter()});
+
+const elfDebugGetFile = new ElfDebugEnzyme(true, 'GetFile.test.js');
 
 
 describe('Getfile test', function () {
@@ -28,5 +33,15 @@ describe('Getfile test', function () {
         expect(wrapper.contains(nineSign)).toBe(true);
     });
 
+    it('renders with /get-file web', () => {
+        const wrapper = mount(
+            <MemoryRouter initialEntries={['/get-file']}>
+                <GetFile />
+            </MemoryRouter>
+        );
+        elfDebugGetFile.getAll(wrapper);
+        const eightSign = <p className='App-intro'>file:unknown</p>;
+        expect(wrapper.contains(eightSign)).toEqual(true);
+    });
 
 });
