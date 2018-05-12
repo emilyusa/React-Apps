@@ -1,6 +1,6 @@
 export default {
     button: {
-        margin: 12,
+        margin: 12
     },
     exampleImageInput: {
         cursor: 'pointer',
@@ -10,6 +10,6 @@ export default {
         right: 0,
         left: 0,
         width: '100%',
-        opacity: 0,
-    },
+        opacity: 0
+    }
 };

@@ -4,7 +4,6 @@ import addresses from '../address-list';
 import AddressShow from './AddressShow';
 
 class Address extends Component {
-
     constructor(props) {
         super(props);
 
@@ -16,16 +15,15 @@ class Address extends Component {
         this.quiet = true;
     }
 
-    setAddress=()=>{
-        this.addressIndex=1;
-        const address=addresses[this.addressIndex];
+    setAddress = () => {
+        this.addressIndex = 1;
+        const address = addresses[this.addressIndex];
         this.setState({
-            address:address
-        })
+            address: address
+        });
     };
 
     render() {
-
         return (
             <div>
                 <AddressShow
@@ -33,7 +31,6 @@ class Address extends Component {
                     setAddress={this.setAddress}
                 />
             </div>
-
         );
     }
 }

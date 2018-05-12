@@ -10,14 +10,16 @@
     "react-scripts": "1.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "DEBUG=firebase-express:server nodemon ./bin/www",
+    "bundle": "node_modules/.bin/webpack --watch",
+    "lint": "./node_modules/.bin/eslint ."
   },
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-plugin-react": "^7.8.0",
     "react-test-renderer": "^16.3.2"
   }
 }
