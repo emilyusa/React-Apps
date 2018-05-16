@@ -9,10 +9,11 @@ router.get('/', function(req, res, next) { 'use strict';
 
 router.get('/search', function(req, res, next) { 'use strict';
     console.log("server side search called.");
+    // noinspection JSAnnotator
     res.send({
-        result:'success foo' ,
-        value:'search result is found',
-        err:'erro is none'
+         result:'success foo' ,
+         value:'search result is found',
+         err:'erro is none'
     });
 });
 
