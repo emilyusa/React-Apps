@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-
+import PropTypes from 'prop-types';
 
 class AddressShow extends Component {
 
@@ -28,5 +28,17 @@ class AddressShow extends Component {
         );
     }
 }
+
+AddressShow.propTypes = {
+    address: PropTypes.shape({
+        firstName: PropTypes.string,
+        lastName: PropTypes.string,
+        street:PropTypes.string,
+        city:PropTypes.string,
+        somestate:PropTypes.string,
+        postal:PropTypes.string
+    }),
+    setAddress: PropTypes.func
+};
 
 export default AddressShow;
