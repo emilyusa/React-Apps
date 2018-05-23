@@ -5,41 +5,38 @@ import AddressShow from './AddressShow';
 
 class Address extends Component {
 
-
     constructor(props) {
         super(props);
-        this.debug = false;
-        this.addressIndex=0;
         this.addressList = null;
+        this.addressIndex = 0;
         this.state = {
             address: tempAddressList[this.addressIndex]
         };
         this.getAddress();
-        
     }
 
     getAddress=()=> {
-
         fetch('/address-list')
             .then((response) => response.json())
-            .then((addressFromServer) => {
-                console.log(addressFromServer);
-                this.addressList=addressFromServer;
-
+            .then((addressListFromServer) => {
+                this.addressList=addressListFromServer;
             })
             .catch((ex) => {
                 console.log(ex);
             })
     }
 
-
     setAddress=(offset)=>{
-        this.addressIndex+=offset;
-        
-        console.log('click showAddrees button');
+        this.addressIndex += offset;
+        if(this.addressIndex>this.addressList.result.length-1) {
+            this.addressIndex = 0;
+        }
+        else if(this.addressIndex<0) {
+            this.addressIndex = this.addressList.result.length - 1;
+        }
         this.setState({
-            address:this.addressList[this.addressIndex]
-        })
+            address:this.addressList.result[this.addressIndex]
+        });
     };
 
     render() {
@@ -48,7 +45,7 @@ class Address extends Component {
             <div>
                 <AddressShow
                     address={this.state.address}
-                    onAddressChange={this.setAddress}
+                    setAddress={this.setAddress}
                 />
             </div>
 

@@ -1,6 +1,3 @@
-
-
-
     const unknown='unknown';
     const   addresses = [
         {
@@ -8,17 +5,26 @@
             lastName: unknown,
             street: unknown,
             city: unknown,
-            somestate: unknown,
-            postal: unknown
+            state: unknown,
+            zip: unknown,
+            phone:unknown,
+            website:unknown,
+            email:unknown,
+            contact:unknown
         },
         {
             firstName: 'Chunyan',
             lastName: 'Li',
             street: '4190 129th PL SE',
             city: 'Bellevue',
-            somestate: 'WA',
-            postal: '98006'
+            state: 'WA',
+            zip: '98006',
+            phone:'425-247-5300',
+            website:'www.google.com',
+            email:'emilyusa@yahoo.com',
+            contact:'family'
         }
     ];
 
 export default addresses;
+

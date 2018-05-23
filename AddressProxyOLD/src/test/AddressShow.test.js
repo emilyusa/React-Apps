@@ -20,7 +20,11 @@ describe('AddressShow Shallow Suite', function () {
         Street: '4190 129th PL SE',
         City: 'Bellevue',
         State: 'WA',
-        Postal: '98006'
+        Zip: '98006',
+        Phone:'425-247-5300',
+        Website:'www.google.com',
+        Email:'emilyusa@yahoo.com',
+        Contact:'family'
     };
 
 
@@ -68,10 +72,28 @@ describe('AddressShow Shallow Suite', function () {
     });
 
     it('renders and displays the default postal', () => {
-        defaultFieldTest('Postal:unknown');
+        defaultFieldTest('Zip:unknown');
         //afterClickFieldTest('Postal:'+addressTest.Postal);
     });
 
+    it('renders and displays the default postal', () => {
+        defaultFieldTest('Phone:unknown');
+        //afterClickFieldTest('Postal:'+addressTest.Postal);
+    });
 
+    it('renders and displays the default postal', () => {
+        defaultFieldTest('Website:unknown');
+        //afterClickFieldTest('Postal:'+addressTest.Postal);
+    });
+
+    it('renders and displays the default postal', () => {
+        defaultFieldTest('Email:unknown');
+        //afterClickFieldTest('Postal:'+addressTest.Postal);
+    });
+
+    it('renders and displays the default postal', () => {
+        defaultFieldTest('Contact:unknown');
+        //afterClickFieldTest('Postal:'+addressTest.Postal);
+    });
 });
 

@@ -21,7 +21,6 @@ function readFile(fileName) {
     });
 }
 
-
 router.get('/address-list', function(req, res) {
     'use strict';
     readFile(__dirname + '/address-list.json')

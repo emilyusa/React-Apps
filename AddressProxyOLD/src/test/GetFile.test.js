@@ -5,7 +5,6 @@ import Adapter from 'enzyme-adapter-react-16';
 import GetFile from '../components/GetFile';
 import ElfDebugEnzyme from "../ElfDebugEnzyme";
 import { MemoryRouter } from 'react-router';
-import {mount} from 'enzyme';
 import {BrowserRouter, Route} from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
@@ -32,7 +31,6 @@ describe('Getfile test', function () {
         const wrapper = shallow(<GetFile/>);
         const welcome = <p className="App-intro">file:unknown</p>;
         const Nine=wrapper.find('p').first().debug();
-        console.log(Nine);
         expect(wrapper.contains(welcome)).toBe(true);
     });
 
@@ -43,19 +41,9 @@ describe('Getfile test', function () {
         const nineSign = <p className="App-intro">file:url-file.js</p>;
         wrapper.find('#getFile').simulate('click');
         const paragraphData=wrapper.find('div').childAt(1).debug();
-        console.log(paragraphData);
         expect(wrapper.contains(nineSign)).toBe(true);
     });
 
-    it('renders with /get-file web', () => {
-        const wrapper = mount(
-            <MemoryRouter initialEntries={['/get-file']}>
-                <GetFile />
-            </MemoryRouter>
-        );
-        elfDebugGetFile.getAll(wrapper);
-        const eightSign = <p className='App-intro'>file:unknown</p>;
-        expect(wrapper.contains(eightSign)).toEqual(true);
-    });
+
 
 });
