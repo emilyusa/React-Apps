@@ -37,7 +37,7 @@ class Address extends Component {
     };
 
     setAddress = offset => {
-        if (offset == 0) {
+        if (offset === 0) {
             const middlebutton = tempAddressList[1];
             this.setState({
                 address: middlebutton
