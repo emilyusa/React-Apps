@@ -7,48 +7,51 @@ export default class AddressShow extends React.Component {
     
     render() {
         return (
-            <View className="App">
-                <Text className="App-intro">firstName:{this.props.address.firstName}
+            <View style={styles.container}>
+                <Text style={styles.addressContainer}>firstName:{this.props.address.firstName}
                 </Text>
                 
-                <Text className="App-intro">lastName:{this.props.address.lastName}
+                <Text style={styles.addressContainer}>lastName:{this.props.address.lastName}
                 </Text>
                 
-                <Text className="App-intro">Street:{this.props.address.street}
+                <Text style={styles.addressContainer}>Street:{this.props.address.street}
                 </Text>
                 
-                <Text className="App-intro">City:{this.props.address.city}
+                <Text style={styles.addressContainer}>City:{this.props.address.city}
                 </Text>
                 
-                <Text className="App-intro">State:{this.props.address.state}
+                <Text style={styles.addressContainer}>State:{this.props.address.state}
                 </Text>
                 
-                <Text className="App-intro">Zip:{this.props.address.zip}
+                <Text style={styles.addressContainer}>Zip:{this.props.address.zip}
                 </Text>
 
-                <Text className="App-intro">Phone:{this.props.address.phone}
+                <Text style={styles.addressContainer}>Phone:{this.props.address.phone}
                 </Text>
 
-                <Text className="App-intro">Websit:{this.props.address.website}
+                <Text style={styles.addressContainer}>Websit:{this.props.address.website}
                 </Text>
 
-                <Text className="App-intro">Email:{this.props.address.email}
+                <Text style={styles.addressContainer}>Email:{this.props.address.email}
                 </Text>
 
-                <Text className="App-intro">Contact:{this.props.address.contact}
+                <Text style={styles.addressContainer}>Contact:{this.props.address.contact}
                 </Text>
-
+                <View style={styles.buttonView}>
                 <Button
                     title="setAddressLast"
-                    style={styles.button}
                     onPress={(event) => this.props.setAddress(-1, event)}>
                 </Button>
                 <Button
+                    title="setAddress"
+                    onPress={(event) => this.props.setAddress(0, event)}>
+                </Button>
+                <Button
                     title="setAddressNext"
-                    style={styles.button}
+                    style={styles.buttonView}
                     onPress={(event) => this.props.setAddress(1, event)}>
                 </Button>
-
+                </View>
                               
           </View>
         );

@@ -23,7 +23,6 @@ export default class Address extends React.Component {
 				.then((response) => response.json())
 				.then((addressListFromServer) => {
 					this.addressList=addressListFromServer;
-                    console.log(this.addressList.result);
 				})
 				.catch((ex) => {
 					console.log(ex);
@@ -33,18 +32,24 @@ export default class Address extends React.Component {
 
 
 		setAddress=(offset)=> {
+            if(offset==0){
+                const middlebutton=tempAddressList[1];
+                this.setState({
+                    address:middlebutton
+                });
+            }else {
+                this.addressIndex += offset;
+                if (this.addressIndex > 99) {
 
-			this.addressIndex += offset;
-			if(this.addressIndex>99) {
-
-				this.addressIndex = 0;
-			}
-			else if(this.addressIndex<0) {
-				this.addressIndex = 99;
-			}
-			this.setState({
-				address:this.addressList.result[this.addressIndex]
-			});
+                    this.addressIndex = 0;
+                }
+                else if (this.addressIndex < 0) {
+                    this.addressIndex = 99;
+                }
+                this.setState({
+                    address: this.addressList.result[this.addressIndex]
+                });
+            }
 		};
 
 		render() {
