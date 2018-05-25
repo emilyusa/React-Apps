@@ -1,0 +1,14 @@
+
+[Service]
+ExecStart=/usr/bin/node /home/ubuntu/bin/nrbe/bin/www
+WorkingDirectory=/home/ubuntu/bin/nrbe
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nrbe
+User=ubuntu
+Group=ubuntu
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
