@@ -19,7 +19,6 @@ class Address extends Component {
     setAddress=(event)=>{
         this.addressIndex=1;
         const address=addresses[this.addressIndex];
-        console.log('click showAddrees button');
         this.setState({
             address:address
         })

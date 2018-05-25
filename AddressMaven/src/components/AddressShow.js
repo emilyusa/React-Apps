@@ -34,7 +34,7 @@ class AddressShow extends Component {
                         </FontIcon>
                     }
                     style={styles.button}
-                    onClick={this.props.onAddressChange}
+                    onClick={this.props.setAddress}
                 />
             </div>
         );
@@ -50,7 +50,7 @@ AddressShow.propTypes = {
         somestate:PropTypes.string,
         postal:PropTypes.string
     }),
-    onAddressChange: PropTypes.func
+        setAddress: PropTypes.func
 };
 
 export default AddressShow;

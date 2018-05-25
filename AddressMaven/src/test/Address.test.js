@@ -13,13 +13,11 @@ const address = addresses[0];
 
 describe('Address tests',  function() {
 
-    it('renders without crashing', () => {
+    it.only('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
             <MuiThemeProvider>
-                <BrowserRouter>
-                    <Address/>
-                </BrowserRouter>
+                <Address/>
             </MuiThemeProvider>
             , div);
         ReactDOM.unmountComponentAtNode(div);
@@ -109,5 +107,5 @@ describe('Address tests',  function() {
         });
     });
 
-});
+})
 
