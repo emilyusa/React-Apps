@@ -4,16 +4,14 @@ import tempAddressList from '../address-list';
 import AddressShow from './AddressShow';
 
 class Address extends Component {
-
     constructor(props) {
         super(props);
-        this.canceled=false;
+        this.canceled = false;
         this.state = {
-            addressList:null,
-            addressIndex:0,
+            addressList: null,
+            addressIndex: 0,
             address: tempAddressList[0]
         };
-
     }
 
     componentDidMount() {
@@ -24,46 +22,42 @@ class Address extends Component {
         this.canceled = true;
     }
 
-    getAddress=()=> {
+    getAddress = () => {
         fetch('/address-list')
-            .then((response) => response.json())
-            .then((addressListFromServer) => {
+            .then(response => response.json())
+            .then(addressListFromServer => {
                 if (!this.canceled) {
-                    this.setState({addressList: addressListFromServer});
-                    this.setState({index: 0});
+                    this.setState({ addressList: addressListFromServer });
+                    this.setState({ index: 0 });
                 }
-
             })
-            .catch((ex) => {
+            .catch(ex => {
                 console.log(ex);
-            })
-    }
-
-    setAddress=(offset)=>{
-        if(offset==0){
-            const middlebutton=tempAddressList[1];
-            this.setState({
-                address:middlebutton
             });
-        }else {
-            var tempIndex=this.state.addressIndex;
+    };
+
+    setAddress = offset => {
+        if (offset == 0) {
+            const middlebutton = tempAddressList[1];
+            this.setState({
+                address: middlebutton
+            });
+        } else {
+            var tempIndex = this.state.addressIndex;
             tempIndex += offset;
             if (tempIndex > 99) {
                 tempIndex = 0;
-            }
-            else if (tempIndex < 0) {
+            } else if (tempIndex < 0) {
                 tempIndex = 99;
             }
             this.setState({
-                addressIndex:tempIndex,
+                addressIndex: tempIndex,
                 address: this.state.addressList.result[tempIndex]
             });
         }
     };
 
-
     render() {
-        if (!this.quiet){console.log("ADDRESS RENDER");}
         return (
             <div>
                 <AddressShow
@@ -71,7 +65,6 @@ class Address extends Component {
                     setAddress={this.setAddress}
                 />
             </div>
-
         );
     }
 }
