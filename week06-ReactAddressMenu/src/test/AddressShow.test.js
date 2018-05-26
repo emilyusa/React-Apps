@@ -43,7 +43,7 @@ describe('AddressShow Shallow Suite', function () {
     const afterClickFieldTest = (name, index, talkToMe) => {
         const wrapper =mount(<Address address={address}/>);
         const patty = <p className="App-intro">{name}</p>;
-		console.log(wrapper.debug());
+        console.log(wrapper.debug());
         wrapper.find('#setAddress').simulate('click');
         getIndex(wrapper, index, talkToMe);
         expect(wrapper.contains(patty)).toEqual(true);

@@ -12,7 +12,7 @@ class GetFile extends React.Component {
 
     getFile = () => {
         console.log('getFile called.');
-        this.setState({file: 'url-file.js'})
+        this.setState({file: 'url-file.js'});
     };
 
     render() {

@@ -1,0 +1,38 @@
+{
+  "name": "week03-react-jest",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:30026",
+  "dependencies": {
+    "eslint-plugin-react": "^7.8.2",
+    "material-ui": "^0.20.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-plugin-react-html-attrs": "^2.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-test-renderer": "^16.3.2"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/registerServiceWorker.js",
+      "!**/elf-styles.js",
+      "!src/index.js",
+      "!src/ElfDebugEnzyme.js",
+      "!**/build/**"
+    ]
+  }
+}

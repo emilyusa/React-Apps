@@ -11,7 +11,7 @@ class ElfHeader extends Component {
 					  <li><Link to="/">Address</Link></li>
 					  <li><Link to="/get-file">Get File</Link></li>          
 				  </ul>
-                  <Header />
+                <Header />
 			  </div>                
 			
 			

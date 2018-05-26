@@ -22,11 +22,11 @@ class Address extends Component {
         console.log('click showAddrees button');
         this.setState({
             address:address
-        })
+        });
     };
 
     render() {
-        if (!this.quiet){console.log("ADDRESS RENDER");}
+        if (!this.quiet){console.log('ADDRESS RENDER');}
         return (
             <div>
                 <AddressShow

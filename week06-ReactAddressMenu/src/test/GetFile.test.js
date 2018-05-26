@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {configure,shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import GetFile from '../components/GetFile';
-import ElfDebugEnzyme from "../ElfDebugEnzyme";
+import ElfDebugEnzyme from '../ElfDebugEnzyme';
 import { MemoryRouter } from 'react-router';
 import {mount} from 'enzyme';
 

@@ -25,7 +25,7 @@ export default class App extends React.Component {
                 });
             }).catch(function(ex) {
                 that.setState({foo: 'qux error'});
-        });
+            });
 
     };
 
@@ -37,34 +37,34 @@ export default class App extends React.Component {
         };
     }
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Prog 272 Chunyan!</Text>
-        <Text>{this.state.foo}</Text>
-        <Text>{this.state.result}</Text>
-          <Button
-              onPress={this.fetchAddress}
-              title="Get Data"
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-          />
-          <Button
-              onPress={this.fetchMicro}
-              title="Get Micro"
-              color="#841584"
-              accessibilityLabel="Learn more about this purple button"
-          />
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text>Prog 272 Chunyan!</Text>
+                <Text>{this.state.foo}</Text>
+                <Text>{this.state.result}</Text>
+                <Button
+                    onPress={this.fetchAddress}
+                    title="Get Data"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
+                <Button
+                    onPress={this.fetchMicro}
+                    title="Get Micro"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                />
+            </View>
+        );
+    }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
