@@ -39,7 +39,7 @@ export default class AddressShow extends React.Component {
                 </Text>
                 <View style={styles.buttonView}>
                 <Button
-                    title="setAddressLast"
+                    title="Backword"
                     onPress={(event) => this.props.setAddress(-1, event)}>
                 </Button>
                 <Button
@@ -47,7 +47,7 @@ export default class AddressShow extends React.Component {
                     onPress={(event) => this.props.setAddress(0, event)}>
                 </Button>
                 <Button
-                    title="setAddressNext"
+                    title="Forward"
                     style={styles.buttonView}
                     onPress={(event) => this.props.setAddress(1, event)}>
                 </Button>

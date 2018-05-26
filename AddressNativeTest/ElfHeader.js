@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-native';
 import {Text, View} from 'react-native';
 import styles from "./elf-styles";
+import { Route } from 'react-router-native';
 
 export default class ElfHeader extends React.Component {
 

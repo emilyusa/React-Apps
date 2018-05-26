@@ -8,7 +8,7 @@ export default class AddressShow extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.addressContainer}>firstName:{this.props.address.firstName}
+                <Text >firstName:{this.props.address.firstName}
                 </Text>
                 
                 <Text style={styles.addressContainer}>lastName:{this.props.address.lastName}
@@ -39,16 +39,18 @@ export default class AddressShow extends React.Component {
                 </Text>
                 <View style={styles.buttonView}>
                 <Button
-                    title="setAddressLast"
+                    id="Backward"
+                    title="Backward"
                     onPress={(event) => this.props.setAddress(-1, event)}>
                 </Button>
                 <Button
+                    id="setAddress"
                     title="setAddress"
                     onPress={(event) => this.props.setAddress(0, event)}>
                 </Button>
                 <Button
-                    title="setAddressNext"
-                    style={styles.buttonView}
+                    id="Forward"
+                    title="Forward"
                     onPress={(event) => this.props.setAddress(1, event)}>
                 </Button>
                 </View>
