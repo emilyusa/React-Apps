@@ -36,12 +36,6 @@ describe('Address tests', function() {
         });
     });
 
-    // const setAddress = (wrapper) => {
-    //     wrapper.instance().getAddress();
-    //     setImmediate(() => {
-    //         wrapper.update();
-    //     });
-    // };
 
     it('renders without crashing', () => {
         const div = document.createElement('div');
