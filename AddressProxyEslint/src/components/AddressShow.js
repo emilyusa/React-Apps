@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-import '../css/App.css';
-import RaisedButton from 'material-ui/RaisedButton';
-import styles from './elf-styles';
-import FontIcon from 'material-ui/FontIcon';
-import { red500 } from 'material-ui/styles/colors';
+import './App.css';
+import Button from '@material-ui/core/Button';
+
 import PropTypes from 'prop-types';
+import Icon from '@material-ui/core/Icon';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = theme => ({
+    rightIcon: {
+        marginLeft: theme.spacing.unit,
+    }
+});
 
 class AddressShow extends Component {
     render() {
+        const { classes } = this.props;
         return (
             <div className="App">
                 <p className="App-intro">
@@ -28,41 +35,31 @@ class AddressShow extends Component {
                 <p className="App-intro">
                     Contact:{this.props.address.contact}
                 </p>
-                <RaisedButton
-                    id="setAddressLast"
-                    style={styles.button}
-                    primary={true}
-                    icon={
-                        <FontIcon class="material-icons" color={red500}>
-                            arrow_back_ios
-                        </FontIcon>
-                    }
-                    onClick={event => this.props.setAddress(-1, event)}
-                />
-                <RaisedButton
-                    id="setAddress"
-                    label="Set Address"
-                    labelPosition="before"
-                    primary={true}
-                    icon={
-                        <FontIcon class="material-icons" color={red500}>
-                            rss_feed
-                        </FontIcon>
-                    }
-                    style={styles.button}
-                    onClick={event => this.props.setAddress(0, event)}
-                />
-                <RaisedButton
-                    id="setAddressNext"
-                    style={styles.button}
-                    primary={true}
-                    icon={
-                        <FontIcon class="material-icons" color={red500}>
-                            arrow_forward_ios
-                        </FontIcon>
-                    }
-                    onClick={event => this.props.setAddress(1, event)}
-                />
+                <div className="App">
+                    <Button
+                        color='secondary'
+                        variant='raised'
+                        onClick={e => this.props.setAddress(-1, e)}
+                    >
+                        <Icon className={classes.rightIcon}>arrow_back</Icon>
+                    </Button>
+
+                    <Button
+                        id='setAddress'
+                        color='primary'
+                        variant='raised'
+                        onClick={e => this.props.setAddress(0, e)}
+                    >
+                        Address
+                    </Button>
+                    <Button
+                        color='secondary'
+                        variant='raised'
+                        onClick={e => this.props.setAddress(1, e)}
+                    >
+                        <Icon className={classes.rightIcon}>arrow_forward</Icon>
+                    </Button>
+                </div>
             </div>
         );
     }
@@ -81,7 +78,8 @@ AddressShow.propTypes = {
         email: PropTypes.string,
         contact: PropTypes.string
     }),
-    setAddress: PropTypes.func
+    setAddress: PropTypes.func,
+    classes: PropTypes.object.isRequired
 };
 
-export default AddressShow;
+export default withStyles(styles) (AddressShow);

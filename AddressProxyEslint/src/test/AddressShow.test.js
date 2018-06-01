@@ -32,8 +32,7 @@ describe('AddressShow Shallow Suite', function() {
     const defaultFieldTest = name => {
         const wrapper = shallow(<AddressShow address={address} />);
         const welcome = <p className="App-intro">{name}</p>;
-
-        expect(wrapper.contains(welcome)).toEqual(true);
+        expect(wrapper.dive().contains(welcome)).toEqual(true);
     };
 
     const afterClickFieldTest = name => {
@@ -41,9 +40,8 @@ describe('AddressShow Shallow Suite', function() {
             <AddressShow address={address} setAddress={setAddress} />
         );
         const patty = <p className="App-intro">{name}</p>;
-
-        wrapper.find('#setAddress').simulate('click');
-        expect(wrapper.contains(patty)).toBe(true);
+        wrapper.dive().find('#setAddress').simulate('click');
+        expect(wrapper.dive().contains(patty)).toBe(true);
     };
 
     it('renders and displays the first name', () => {

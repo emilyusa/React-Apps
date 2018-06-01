@@ -4,15 +4,22 @@ import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import GetFile from '../components/GetFile';
 import { BrowserRouter } from 'react-router-dom';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import {createMuiTheme} from "@material-ui/core/styles/index";
 
 configure({ adapter: new Adapter() });
 
 describe('Getfile test', function() {
+    const themeDark = createMuiTheme({
+        palette: {
+            type: 'dark'
+        }
+    });
+
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
-            <MuiThemeProvider>
+            <MuiThemeProvider theme={themeDark}>
                 <BrowserRouter>
                     <GetFile />
                 </BrowserRouter>
@@ -25,7 +32,6 @@ describe('Getfile test', function() {
     it('renders and reads file before click', () => {
         const wrapper = shallow(<GetFile />);
         const welcome = <p className="App-intro">file:unknown</p>;
-        //const Nine=wrapper.find('p').first().debug();
         expect(wrapper.contains(welcome)).toBe(true);
     });
 

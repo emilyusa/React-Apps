@@ -4,11 +4,18 @@ import Address from '../components/Address';
 import addresses from '../address-list';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import {createMuiTheme} from "@material-ui/core/styles/index";
 
 configure({ adapter: new Adapter() });
 
 describe('Address tests', function() {
+    const themeDark = createMuiTheme({
+        palette: {
+            type: 'dark'
+        }
+    });
+
     beforeEach(() => {
         global.fetch = jest.fn().mockImplementation(() => {
             const promise = new Promise(resolve => {
@@ -40,7 +47,7 @@ describe('Address tests', function() {
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
-            <MuiThemeProvider>
+            <MuiThemeProvider theme={themeDark}>
                 <Address />
             </MuiThemeProvider>,
             div
