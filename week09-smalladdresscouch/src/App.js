@@ -135,9 +135,16 @@ class App extends Component {
           <Button
               color='secondary'
               variant='raised'
-              onClick={e => this.addAddressReal({firstName: 'foo', lastName: 'bar'}, e)}
+              onClick={e => this.addAddress({firstName: 'foo', lastName: 'bar'}, e)}
           >
               Insert FooBar
+          </Button>
+          <Button
+              color='secondary'
+              variant='raised'
+              onClick={e => this.addAddressReal(e)}
+          >
+              Insert Real Name
           </Button>
           <Button
               color='secondary'
