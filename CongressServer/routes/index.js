@@ -4,21 +4,21 @@ var fs=require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) { 'use strict';
-  res.render('index', { title: 'CongressServer' });
-});
+      res.render('index', { title: 'CongressServer' });
+    });
 
-function readFile(fileName) {
-    'use strict';
-    return new Promise(function(resolve, reject) {
-        fs.readFile(fileName, 'utf8', function(err, fileContents) {
-            if (err) {
-                reject(err);
-            }
-            resolve({
-                'result': fileContents
+    function readFile(fileName) {
+        'use strict';
+        return new Promise(function(resolve, reject) {
+            fs.readFile(fileName, 'utf8', function(err, fileContents) {
+                if (err) {
+                    reject(err);
+                }
+                resolve({
+                    'result': fileContents
+                });
             });
         });
-    });
 }
 
 
