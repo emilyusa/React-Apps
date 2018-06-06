@@ -20,7 +20,7 @@ class App extends Component {
 
     componentDidMount() {
         this.db = new PouchDB('addresses');
-        this.remoteCouch = 'http://172.20.10.3:5984/addresses';
+        this.remoteCouch = 'http://10.12.37.80:5984/addresses';
         //this.remoteCouch = false;
         this.syncDom = document.getElementById('sync-wrapper');
         this.db.changes({
@@ -85,6 +85,7 @@ class App extends Component {
             }
         });
         this.state.ids.push(address._id);
+        this.setState({ids: address._id});
         // You call this.setState and set the new ids value.
 
     };
@@ -153,6 +154,22 @@ class App extends Component {
           >
               Show
           </Button>
+          <Button
+              color='secondary'
+              variant='raised'
+              onClick={this.update}
+          >
+              Update
+          </Button>
+          <Button
+              color='secondary'
+              variant='raised'
+              onClick={this.sync}
+          >
+              Sync
+          </Button>
+
+          <p>{this.state.ids}</p>
       </div>
     );
   }
