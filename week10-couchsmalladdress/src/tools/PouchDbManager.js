@@ -7,7 +7,7 @@ class DataManager {
         PouchDB.plugin(PouchdbFind);
         this.addressList = null;
         this.addressIndex = 0;
-        this.DATABASE_NAME = 'small-address';
+        this.DATABASE_NAME = 'address-list-chunyan';
     }
 
     init = () => {

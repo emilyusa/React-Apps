@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import AddressShow from './AddressShow';
-import dataManager from '../tools/PouchDbManager';
+
 
 class Address extends Component {
     constructor(props) {
@@ -104,7 +104,7 @@ class Address extends Component {
     };
 
     render() {
-        const {classes} = this.props;
+        // const {classes} = this.props;
         return (
             <AddressShow
                 name={this.state.names[this.state.namesIndex]}
