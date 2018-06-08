@@ -52,7 +52,7 @@ class InitializeDatabase extends Component {
                 if (!this.canceled) {
                     this.setState({addressList: addressListFromServer.result});
                     this.setState({addressIndex: 0});
-                    console.log(addressListFromServer.result);
+                    console.log(addressListFromServer.result.length);
                     
                     //this.setAddress(0);
                 }

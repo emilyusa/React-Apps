@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+// import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -64,3 +65,11 @@ export default class AddressEdit extends Component {
         );
     }
 }
+
+// AddressEdit.propTypes = {
+//     addressChangedByUser: PropTypes.func,
+//     address: PropTypes.shape({
+//         firstName: PropTypes.string,
+//         lastName: PropTypes.string
+//     })
+// };

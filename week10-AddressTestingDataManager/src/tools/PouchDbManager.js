@@ -12,8 +12,8 @@ class DataManager {
 
     init = () => {
         console.log('DataManager Init');
-        this.remoteCouch = 'http://10.0.0.26:5984/' + this.DATABASE_NAME;
-        this.db = new PouchDB(this.remoteCouch);
+        this.db = new PouchDB(this.DATABASE_NAME);
+        this.remoteCouch = 'http://10.12.124.2:5984/' + this.DATABASE_NAME;
         return this.db;
     };
 
@@ -114,10 +114,8 @@ class DataManager {
     };
 
     convertAddress = addressList => {
-        console.log('convertAddress in DBmanager is called');
         let count = 0;
         this.getRecordCount().then(() => {
-            console.log(addressList);
             for (let address of addressList) {
                 console.log(count++);
                 this.addAddress(address);

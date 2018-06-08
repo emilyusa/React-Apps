@@ -13,6 +13,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import DraftsIcon from '@material-ui/icons/Drafts';
+import SendIcon from '@material-ui/icons/Send';
 
 configure({ adapter: new Adapter() });
 
@@ -25,11 +26,14 @@ describe('ElfHeader test', function() {
 
     const gitItems = (
         <div>
-            <ListItem>
+            <ListItem
+                button
+                component={Link}
+                to="/">
                 <ListItemIcon>
                     <InboxIcon/>
                 </ListItemIcon>
-                <ListItemText primary="Address"/>
+                <ListItemText primary="Home"/>
             </ListItem>
         </div>
     );
@@ -39,11 +43,26 @@ describe('ElfHeader test', function() {
             <ListItem
                 button
                 component={Link}
-                to="/get-file">
+                to="/address">
                 <ListItemIcon>
                     <DraftsIcon/>
                 </ListItemIcon>
-                <ListItemText primary="GetFile"/>
+                <ListItemText primary="Address"/>
+            </ListItem>
+
+        </div>
+    );
+
+    const initialDB = (
+        <div>
+            <ListItem
+                button
+                component={Link}
+                to="/init-db">
+                <ListItemIcon>
+                    <SendIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Initialize DB"/>
             </ListItem>
 
         </div>
@@ -81,4 +100,11 @@ describe('ElfHeader test', function() {
         expect(wrapper.dive().containsMatchingElement(getfilelinktext)).toBe(true);
     });
 
+    it('renders and reads second MenuItem text', () => {
+        const wrapper = shallow(<ElfHeader />);
+        const getfilelinktext =<List>{initialDB}</List>;
+        expect(wrapper.dive().containsMatchingElement(getfilelinktext)).toBe(true);
+    });
 });
+
+
