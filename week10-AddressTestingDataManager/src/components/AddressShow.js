@@ -30,9 +30,9 @@ class AddressShow extends Component {
         this.state = {
             editOpen:false,
             edits:{
-                _id:'unknown',
-                firstName:'unknown',
-                lastName:'unknown'
+                _id: 'unknown',
+                firstName: 'unknown',
+                lastName: 'unknown'
             }
         };
     }
@@ -78,14 +78,14 @@ class AddressShow extends Component {
                 <Paper className={classes.rootBar}>
                     <p>{this.props.name.firstName}</p>
                     <p>{this.props.name.lastName}</p>
-                    {/*<p>{this.props.name.street}</p>*/}
-                    {/*<p>{this.props.name.city}</p>*/}
-                    {/*<p>{this.props.name.state}</p>*/}
-                    {/*<p>{this.props.name.zip}</p>*/}
-                    {/*<p>{this.props.name.website}</p>*/}
-                    {/*<p>{this.props.name.email}</p>*/}
-                    {/*<p>{this.props.name.contact}</p>*/}
-                    {/*<p>{this.props.name._id}</p>*/}
+                    <p>{this.props.name.street}</p>
+                    <p>{this.props.name.city}</p>
+                    <p>{this.props.name.state}</p>
+                    <p>{this.props.name.zip}</p>
+                    <p>{this.props.name.phone}</p>
+                    <p>{this.props.name.website}</p>
+                    <p>{this.props.name.email}</p>
+                    <p>{this.props.name.contact}</p>
                     <Button
                         color="secondary"
                         variant="raised"
@@ -110,7 +110,7 @@ class AddressShow extends Component {
                     </Button>
                     <div>
                         <div className={classes.container}>
-                            {/*// ALL YOUR ADDRESS SHOW JSX HERE*/}
+
                             <Button
                                 color="secondary"
                                 variant="raised"

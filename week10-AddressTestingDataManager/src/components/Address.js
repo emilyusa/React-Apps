@@ -13,14 +13,15 @@ class Address extends Component {
             names: [{
                 _id: 'unknown',
                 firstName: 'unknown',
-                lastName: 'unknown'
-                // street:'unknown',
-                // city:'unknown',
-                // state:'unknown',
-                // zip:'unknown',
-                // website:'unknown',
-                // email:'unknown',
-                // contact:'unknown'
+                lastName: 'unknown',
+                street:'unknown',
+                city:'unknown',
+                state:'unknown',
+                zip:'unknown',
+                phone:'unknown',
+                website:'unknown',
+                email:'unknown',
+                contact:'unknown'
             }]
         };
     }
@@ -57,6 +58,7 @@ class Address extends Component {
                         city:address.city,
                         state:address.state,
                         zip:address.zip,
+                        phone:address.phone,
                         website:address.website,
                         email:address.email,
                         contact:address.contact
@@ -118,7 +120,7 @@ class Address extends Component {
     };
 
     render() {
-        // const {classes} = this.props;
+
         return (
             <AddressShow
                 name={this.state.names[this.state.namesIndex]}

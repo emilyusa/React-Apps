@@ -50,9 +50,10 @@ class InitializeDatabase extends Component {
             .then(response => response.json())
             .then(addressListFromServer => {
                 if (!this.canceled) {
+                    console.log(addressListFromServer.result);
                     this.setState({addressList: addressListFromServer.result});
                     this.setState({addressIndex: 0});
-                    console.log(addressListFromServer.result.length);
+                    console.log(addressListFromServer.result);
                     
                     //this.setAddress(0);
                 }

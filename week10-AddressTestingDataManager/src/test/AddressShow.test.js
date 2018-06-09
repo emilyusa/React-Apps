@@ -1,8 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import AddressShow from '../components/AddressShow';
 import addresses from '../address-list';
 import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import dataManager from "../assets/FakeDataManager";
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 configure({ adapter: new Adapter() });
 
@@ -29,11 +32,10 @@ describe('AddressShow Shallow Suite', function() {
         wrapper.setProps({ address: address });
     };
 
-    const defaultFieldTest = name => {
-        const wrapper = shallow(<AddressShow address={address} />);
-        const welcome = <p className="App-intro">{name}</p>;
-        expect(wrapper.dive().contains(welcome)).toEqual(true);
-    };
+    const addressProp = wrapper => wrapper
+        .find('WithStyles(AddressShow)')
+        .prop('address');
+
 
     const afterClickFieldTest = name => {
         wrapper = shallow(
@@ -44,53 +46,92 @@ describe('AddressShow Shallow Suite', function() {
         expect(wrapper.dive().contains(patty)).toBe(true);
     };
 
-    it('renders and displays the first name', () => {
-        defaultFieldTest('firstName:unknown');
-        afterClickFieldTest('firstName:' + addressTest.firstName);
+    const themeDark = createMuiTheme({
+        palette: {
+            type: 'dark'
+        }
     });
 
+
+    it('renders and displays the default first name', () => {
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .firstName)
+            .toEqual('unknown');
+    });
+
+
+
     it('renders and displays the default last name', () => {
-        defaultFieldTest('lastName:unknown');
-        afterClickFieldTest('lastName:' + addressTest.lastName);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .lastName)
+            .toEqual('unknown');
     });
 
     it('renders and displays the default street', () => {
-        defaultFieldTest('Street:unknown');
-        afterClickFieldTest('Street:' + addressTest.street);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .street)
+            .toEqual('unknown');
     });
 
     it('renders and displays the default city', () => {
-        defaultFieldTest('City:unknown');
-        afterClickFieldTest('City:' + addressTest.city);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .city)
+            .toEqual('unknown');
     });
 
     it('renders and displays the default state', () => {
-        defaultFieldTest('State:unknown');
-        afterClickFieldTest('State:' + addressTest.state);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .state)
+            .toEqual('unknown');
     });
 
     it('renders and displays the default zip', () => {
-        defaultFieldTest('Zip:unknown');
-        afterClickFieldTest('Zip:' + addressTest.zip);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .zip)
+            .toEqual('unknown');
     });
 
     it('renders and displays the default phone', () => {
-        defaultFieldTest('Phone:unknown');
-        afterClickFieldTest('Phone:' + addressTest.phone);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .phone)
+            .toEqual('unknown');
     });
 
     it('renders and displays the default website', () => {
-        defaultFieldTest('Website:unknown');
-        afterClickFieldTest('Website:' + addressTest.website);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .website)
+            .toEqual('unknown');
     });
 
     it('renders and displays the default email', () => {
-        defaultFieldTest('Email:unknown');
-        afterClickFieldTest('Email:' + addressTest.email);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .email)
+            .toEqual('unknown');
     });
 
     it('renders and displays the default contact', () => {
-        defaultFieldTest('Contact:unknown');
-        afterClickFieldTest('Contact:' + addressTest.contact);
+        const wrapper = shallow(<AddressShow addressList={address} />);
+        expect(wrapper
+            .prop('addressList')
+            .contact)
+            .toEqual('unknown');
     });
 });

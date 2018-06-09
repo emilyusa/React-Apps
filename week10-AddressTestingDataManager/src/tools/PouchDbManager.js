@@ -12,8 +12,8 @@ class DataManager {
 
     init = () => {
         console.log('DataManager Init');
-        this.db = new PouchDB(this.DATABASE_NAME);
-        this.remoteCouch = 'http://10.12.124.2:5984/' + this.DATABASE_NAME;
+        this.remoteCouch = 'http://10.0.0.26:5984/' + this.DATABASE_NAME;
+        this.db = new PouchDB(this.remoteCouch);
         return this.db;
     };
 
