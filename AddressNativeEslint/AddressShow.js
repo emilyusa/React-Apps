@@ -6,60 +6,96 @@ import PropTypes from 'prop-types';
 export default class AddressShow extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Text>firstName:{this.props.address.firstName}</Text>
+            <View style={styles.displayArea}>
+                <View
+                    style={styles.centerContent}
+                    id="addressShow"
+                >
+                    <Text style={styles.header}>
+                        firstName:{this.props.address.firstName}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    lastName:{this.props.address.lastName}
-                </Text>
+                    <Text style={styles.header}>
+                        lastName:{this.props.address.lastName}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    Street:{this.props.address.street}
-                </Text>
+                    <Text style={styles.header}>
+                        Street:{this.props.address.street}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    City:{this.props.address.city}
-                </Text>
+                    <Text style={styles.header}>
+                        City:{this.props.address.city}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    State:{this.props.address.state}
-                </Text>
+                    <Text style={styles.header}>
+                        State:{this.props.address.state}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    Zip:{this.props.address.zip}
-                </Text>
+                    <Text style={styles.header}>
+                        Zip:{this.props.address.zip}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    Phone:{this.props.address.phone}
-                </Text>
+                    <Text style={styles.header}>
+                        Phone:{this.props.address.phone}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    Websit:{this.props.address.website}
-                </Text>
+                    <Text style={styles.header}>
+                        Websit:{this.props.address.website}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    Email:{this.props.address.email}
-                </Text>
+                    <Text style={styles.header}>
+                        Email:{this.props.address.email}
+                    </Text>
 
-                <Text style={styles.addressContainer}>
-                    Contact:{this.props.address.contact}
-                </Text>
-                <View style={styles.buttonView}>
-                    <Button
-                        id="Backward"
-                        title="Backward"
-                        onPress={event => this.props.setAddress(-1, event)}
-                    />
-                    <Button
-                        id="setAddress"
-                        title="setAddress"
-                        onPress={event => this.props.setAddress(0, event)}
-                    />
-                    <Button
-                        id="Forward"
-                        title="Forward"
-                        onPress={event => this.props.setAddress(1, event)}
-                    />
+                    <Text style={styles.header}>
+                        Contact:{this.props.address.contact}
+                    </Text>
+                </View>
+
+                <View
+                    style={{flexDirection:"row",
+                        justifyContent:"center"
+                    }}>
+                    <View style={{flex:1}}>
+                        <Button
+                            id="Backward"
+                            color="darkturquoise"
+                            title="<<"
+                            onPress={event => this.props.setAddress(0,-1, event)}
+                        />
+                    </View>
+                    <View style={{flex:1}}>
+                        <Button
+                            id="Backward"
+                            color="darkturquoise"
+                            title="<"
+                            onPress={event => this.props.setAddress(-1,0, event)}
+                        />
+                    </View>
+                    {/*<View style={{flex:1}}>*/}
+                        {/*<Button*/}
+                            {/*id="setAddress"*/}
+                            {/*color="darkturquoise"*/}
+                            {/*title="||"*/}
+                            {/*onPress={event => this.props.setAddress(0,0, event)}*/}
+                        {/*/>*/}
+                    {/*</View>*/}
+                    <View style={{flex:1}}>
+                        <Button
+                                id="Forward"
+                                color="darkturquoise"
+                                title=">"
+                                onPress={event => this.props.setAddress(1,0, event)}
+                            />
+                    </View>
+                    <View style={{flex:1}}>
+                        <Button
+                            id="Forward"
+                            color="darkturquoise"
+                            title=">>"
+                            onPress={event => this.props.setAddress(0,1, event)}
+                        />
+                    </View>
                 </View>
             </View>
         );

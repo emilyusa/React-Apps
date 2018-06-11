@@ -2,20 +2,28 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        marginTop: 25,
-        padding: 10
+        flex:1,
+        marginTop: 24,
+        marginBottom:1,
+        padding: 50,
+        backgroundColor:'powderblue'
     },
-    addressContainer: {
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center'
+    nav:{
+        flexDirection:'row',
+        justifyContent:'space-around',
+        backgroundColor:'skyblue'
     },
+    displayArea:{
+        flexDirection:'column',
+        backgroundColor:'steelblue'
+    },
+    centerContent:{
+        justifyContent:'center',
+        alignItems:'center'
+    },
+
     header: {
         fontSize: 20
-    },
-    nav: {
-        flexDirection: 'row',
-        justifyContent: 'space-around'
     },
     navItem: {
         flex: 1,

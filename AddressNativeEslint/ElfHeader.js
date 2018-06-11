@@ -7,8 +7,12 @@ export default class ElfHeader extends React.Component {
     render() {
         return (
             <View style={styles.nav}>
-                <Link to="/" underlayColor="#f0f4f7" style={styles.navItem}>
-                    <Text>Address</Text>
+                <Link
+                    to="/"
+                    underlayColor="#f0f4f7"
+                    style={styles.navItem}
+                >
+                    <Text>Home</Text>
                 </Link>
                 <Link
                     to="/get-file"

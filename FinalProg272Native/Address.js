@@ -30,7 +30,6 @@ export default class Address extends React.Component {
                 if (!this.canceled) {
                     this.setState({ addressList: addressListFromServer });
                     this.setState({ index: 0 });
-                    //console.log(this.addressList.result);
                 }
             })
             .catch(ex => {
@@ -38,33 +37,26 @@ export default class Address extends React.Component {
             });
     };
 
-    setAddress=(offset,goToFirst)=>{
-        // if (offset === 0) {
-        //     const middlebutton = tempAddressList[1];
-        //     this.setState({
-        //         address: middlebutton
-        //     });
-        // } else {
+    setAddress = offset => {
+        if (offset === 0) {
+            const middlebutton = tempAddressList[1];
+            this.setState({
+                address: middlebutton
+            });
+        } else {
             var tempIndex = this.state.addressIndex;
-            if(goToFirst===0) {
-                tempIndex += offset;
-                if (tempIndex > 99) {
-                    tempIndex = 99;
-                } else if (tempIndex < 0) {
-                    tempIndex = 0;
-                }
-            }else if(goToFirst==-1){
-                tempIndex=0;
-            }else if(goToFirst==1){
-                tempIndex=99;
+            tempIndex += offset;
+            if (tempIndex > 99) {
+                tempIndex = 0;
+            } else if (tempIndex < 0) {
+                tempIndex = 99;
             }
             this.setState({
                 addressIndex: tempIndex,
                 address: this.state.addressList.result[tempIndex]
             });
-        // }
+        }
     };
-
 
     render() {
         return (
