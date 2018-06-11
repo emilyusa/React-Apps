@@ -2,7 +2,7 @@
   "name": "week09-smalladdresscouch",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:30026",
+  "proxy": "http://18.188.225.33:30026",
   "dependencies": {
     "@material-ui/core": "^1.1.0",
     "@material-ui/icons": "^1.1.0",
