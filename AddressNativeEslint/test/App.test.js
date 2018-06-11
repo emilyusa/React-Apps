@@ -8,17 +8,14 @@ import Address from '../Address';
 import { Route } from 'react-router-native';
 import GetFile from '../GetFile';
 
-
-configure({adapter:new Adapter()});
+configure({ adapter: new Adapter() });
 
 describe('jest test', function() {
-
     const debug = true;
 
     it('renders without crashing', () => {
         const tree = renderer.create(<App />).toJSON();
         expect(tree).toMatchSnapshot();
-
     });
 
     it('should find ElfHeader', () => {

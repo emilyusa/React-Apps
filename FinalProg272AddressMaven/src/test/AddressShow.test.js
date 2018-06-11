@@ -5,7 +5,6 @@ import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import dataManager from '../assets/FakeDataManager';
 
-
 configure({ adapter: new Adapter() });
 
 describe('AddressShow Shallow Suite', function() {

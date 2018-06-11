@@ -7,10 +7,7 @@ export default class AddressShow extends React.Component {
     render() {
         return (
             <View style={styles.displayArea}>
-                <View
-                    style={styles.centerContent}
-                    id="addressShow"
-                >
+                <View style={styles.centerContent} id="addressShow">
                     <Text style={styles.header}>
                         firstName:{this.props.address.firstName}
                     </Text>
@@ -53,47 +50,57 @@ export default class AddressShow extends React.Component {
                 </View>
 
                 <View
-                    style={{flexDirection:"row",
-                        justifyContent:"center"
-                    }}>
-                    <View style={{flex:1}}>
+                    style={{
+                        flexDirection: 'row',
+                        justifyContent: 'center'
+                    }}
+                >
+                    <View style={{ flex: 1 }}>
                         <Button
                             id="Backward"
                             color="darkturquoise"
                             title="<<"
-                            onPress={event => this.props.setAddress(0,-1, event)}
+                            onPress={event =>
+                                this.props.setAddress(0, -1, event)
+                            }
                         />
                     </View>
-                    <View style={{flex:1}}>
+                    <View style={{ flex: 1 }}>
                         <Button
                             id="Backward"
                             color="darkturquoise"
                             title="<"
-                            onPress={event => this.props.setAddress(-1,0, event)}
+                            onPress={event =>
+                                this.props.setAddress(-1, 0, event)
+                            }
                         />
                     </View>
                     {/*<View style={{flex:1}}>*/}
-                        {/*<Button*/}
-                            {/*id="setAddress"*/}
-                            {/*color="darkturquoise"*/}
-                            {/*title="||"*/}
-                            {/*onPress={event => this.props.setAddress(0,0, event)}*/}
-                        {/*/>*/}
+                    {/*<Button*/}
+                    {/*id="setAddress"*/}
+                    {/*color="darkturquoise"*/}
+                    {/*title="||"*/}
+                    {/*onPress={event => this.props.setAddress(0,0, event)}*/}
+                    {/*/>*/}
                     {/*</View>*/}
-                    <View style={{flex:1}}>
+                    <View style={{ flex: 1 }}>
                         <Button
-                                id="Forward"
-                                color="darkturquoise"
-                                title=">"
-                                onPress={event => this.props.setAddress(1,0, event)}
-                            />
+                            id="Forward"
+                            color="darkturquoise"
+                            title=">"
+                            onPress={event =>
+                                this.props.setAddress(1, 0, event)
+                            }
+                        />
                     </View>
-                    <View style={{flex:1}}>
+                    <View style={{ flex: 1 }}>
                         <Button
                             id="Forward"
                             color="darkturquoise"
                             title=">>"
-                            onPress={event => this.props.setAddress(0,1, event)}
+                            onPress={event =>
+                                this.props.setAddress(0, 1, event)
+                            }
                         />
                     </View>
                 </View>

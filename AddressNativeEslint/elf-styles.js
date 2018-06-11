@@ -2,24 +2,24 @@ import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        flex:1,
+        flex: 1,
         marginTop: 24,
-        marginBottom:1,
+        marginBottom: 1,
         padding: 50,
-        backgroundColor:'powderblue'
+        backgroundColor: 'powderblue'
     },
-    nav:{
-        flexDirection:'row',
-        justifyContent:'space-around',
-        backgroundColor:'skyblue'
+    nav: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        backgroundColor: 'skyblue'
     },
-    displayArea:{
-        flexDirection:'column',
-        backgroundColor:'steelblue'
+    displayArea: {
+        flexDirection: 'column',
+        backgroundColor: 'steelblue'
     },
-    centerContent:{
-        justifyContent:'center',
-        alignItems:'center'
+    centerContent: {
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     header: {

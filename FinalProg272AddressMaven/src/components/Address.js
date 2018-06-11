@@ -31,7 +31,8 @@ class Address extends Component {
 
     componentDidMount() {
         this.db = new PouchDB('address-list-chunyan');
-        this.remoteCouch = 'http://IP_Address:5984/addressLinks to an external site.';
+        this.remoteCouch =
+            'http://IP_Address:5984/addressLinks to an external site.';
         this.syncDom = document.getElementById('sync-wrapper');
 
         this.db
