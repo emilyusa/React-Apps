@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../App.css';
 import AddressShow from './AddressShow';
 import PropTypes from 'prop-types';
+import PouchDB from 'pouchdb';
 
 class Address extends Component {
     constructor(props) {
@@ -29,7 +30,16 @@ class Address extends Component {
     }
 
     componentDidMount() {
-        this.props.dataManager.watchChanges(this.watcher);
+        this.db = new PouchDB('address-list-chunyan');
+        this.remoteCouch = 'http://IP_Address:5984/addressLinks to an external site.';
+        this.syncDom = document.getElementById('sync-wrapper');
+
+        this.db
+            .changes({
+                since: 'now',
+                live: true
+            })
+            .on('change', this.showAddress);
     }
 
     componentWillUnmount() {
