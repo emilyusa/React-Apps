@@ -73,9 +73,14 @@ describe('AddressShow Shallow Suite', function() {
         });
     };
 
+    const setAddress=()=>{
+        const address=addresses[1];
+        wrappper.setProps({address:address});
+    };
+
     it('renders and displays the first name after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).firstName).toEqual('Patty');
@@ -84,7 +89,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the last name after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).lastName).toEqual('Murray');
@@ -93,7 +98,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the street after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).street).toEqual(
@@ -104,7 +109,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the city after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).city).toEqual('Washington DC');
@@ -113,7 +118,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the state after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).state).toEqual('WA');
@@ -122,7 +127,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the zip after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).zip).toEqual(' 20510');
@@ -131,7 +136,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the phone after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).phone).toEqual('202-224-2621');
@@ -140,7 +145,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the website after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).website).toEqual(
@@ -151,7 +156,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the email after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).email).toEqual('');
@@ -160,7 +165,7 @@ describe('AddressShow Shallow Suite', function() {
 
     it('renders and displays the contact after click', () => {
         const wrapper = shallow(
-            <AddressShow dataManager={dataManager} addressList={addresses} />
+            <AddressShow dataManager={dataManager} addressList={addresses} setAddress={setAddress}/>
         );
         afterClickFieldTest(wrapper, () => {
             expect(addressProp(wrapper).contact).toEqual(

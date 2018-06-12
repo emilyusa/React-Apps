@@ -1,6 +1,8 @@
+[Unit]
+Description=Run Elven AddressMaven
 
 [Service]
-ExecStart=/usr/bin/node /home/ubuntu/bin/nrbm/bin/www
+ExecStart=/usr/bin/npm start
 WorkingDirectory=/home/ubuntu/bin/nrbm
 Restart=always
 StandardOutput=syslog
@@ -9,6 +11,7 @@ SyslogIdentifier=nrbm
 User=ubuntu
 Group=ubuntu
 Environment=NODE_ENV=production
+Environment=PORT=30025
 
 [Install]
 WantedBy=multi-user.target

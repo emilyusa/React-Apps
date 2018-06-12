@@ -10,6 +10,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 configure({ adapter: new Adapter() });
 
 describe('Address tests', function() {
+
     const themeDark = createMuiTheme({
         palette: {
             type: 'dark'
@@ -20,7 +21,7 @@ describe('Address tests', function() {
         const div = document.createElement('div');
         ReactDOM.render(
             <MuiThemeProvider theme={themeDark}>
-                <Address dataManager={dataManager} addressList={addresses} />
+                <Address dataManager={dataManager}  />
             </MuiThemeProvider>,
             div
         );
@@ -146,6 +147,27 @@ describe('Address tests', function() {
             expect(addressProp(wrapper).firstName).toEqual('Patty');
         });
     });
+
+    const setAddressFieldTest = wrapper => {
+        setImmediate(() => {
+            wrapper.update();
+            wrapper.instance().setAddress(1);
+            setImmediate(() => {
+                wrapper.update();
+            });
+        });
+    };
+    /////
+    it('renders state of firstName after setAddress()', () => {
+        const wrapper = shallow(
+            <Address dataManager={dataManager} addressList={addresses} />
+        );
+        afterClickFieldTest(wrapper, () => {
+            expect(addressProp(wrapper).firstName).toEqual('Robert');
+        });
+    });
+
+    ////////
 
     it('renders state of lastName after button click', () => {
         const wrapper = shallow(
