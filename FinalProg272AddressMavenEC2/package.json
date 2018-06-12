@@ -1,0 +1,43 @@
+{
+  "name": "week09-smalladdresscouch",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://18.188.225.33:30026",
+  "dependencies": {
+    "@material-ui/core": "^1.1.0",
+    "@material-ui/icons": "^1.1.0",
+    "material-ui": "^0.20.1",
+    "pouchdb": "^6.4.3",
+    "pouchdb-find": "^6.4.3",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-test-renderer": "^16.4.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/registerServiceWorker.js",
+      "!**/elf-styles.js",
+      "!src/index.js",
+      "!src/components/InitializeDatabase.js",
+      "!src/tools/PouchDbManager.js",
+      "!src/assets/FakeDataManager.js",
+      "!src/components/tileData.js",
+      "!src/address-list.js"
+    ]
+  }
+}
