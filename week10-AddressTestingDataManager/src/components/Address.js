@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import AddressShow from './AddressShow';
-
+import PouchDB from 'pouchdb';
 
 class Address extends Component {
     constructor(props) {
