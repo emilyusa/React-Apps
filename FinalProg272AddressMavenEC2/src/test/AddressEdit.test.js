@@ -21,6 +21,11 @@ describe('AddressEdit test', function() {
         }
     });
 
+    it('should take an AddressEdit snapshot', () => {
+        const elfTree = shallow(<AddressEdit address={address}/>);
+        expect(elfTree).toMatchSnapshot();
+    });
+
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(

@@ -10,6 +10,11 @@ configure({ adapter: new Adapter() });
 describe('AddressShow Shallow Suite', function() {
     const address = addresses[0];
 
+    it('should take an AddressShow snapshot', () => {
+        const elfTree = shallow(<AddressShow address={address}/>);
+        expect(elfTree).toMatchSnapshot();
+    });
+
     const addressProp = wrapper =>
         wrapper.find('WithStyles(AddressShow)').prop('address');
 
@@ -75,7 +80,7 @@ describe('AddressShow Shallow Suite', function() {
 
     const setAddress=()=>{
         const address=addresses[1];
-        wrappper.setProps({address:address});
+        this.setProps({address:address});
     };
 
     it('renders and displays the first name after click', () => {

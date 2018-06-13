@@ -19,6 +19,11 @@ describe('App test', function() {
         }
     });
 
+    it('should take an App snapshot', () => {
+        const elfTree = shallow(<App/>);
+        expect(elfTree).toMatchSnapshot();
+    });
+
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(

@@ -59,6 +59,11 @@ describe('ElfHeader test', function() {
         </div>
     );
 
+    it('should take an ElfHeader snapshot', () => {
+        const elfTree = shallow(<ElfHeader/>);
+        expect(elfTree).toMatchSnapshot();
+    });
+
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(

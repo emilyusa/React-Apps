@@ -9,6 +9,12 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 configure({ adapter: new Adapter() });
 
 describe('Home test', function() {
+
+    it('should take an Home snapshot', () => {
+        const elfTree = shallow(<Home />);
+        expect(elfTree).toMatchSnapshot();
+    });
+
     const themeDark = createMuiTheme({
         palette: {
             type: 'dark'
@@ -26,9 +32,10 @@ describe('Home test', function() {
         ReactDOM.unmountComponentAtNode(div);
     });
 
-    it('renders and reads Home text', () => {
+    it('renders and reads Home welcome text1', () => {
         const wrapper = shallow(<Home />);
-        const welcome = <h1>Home</h1>;
+        const welcome = <h1>Welcome to the React World</h1>;
         expect(wrapper.dive().containsMatchingElement(welcome)).toBe(true);
     });
+
 });

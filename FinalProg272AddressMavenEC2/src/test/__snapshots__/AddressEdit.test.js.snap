@@ -1,0 +1,534 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressEdit test should take an AddressEdit snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AddressEdit
+    address={
+        Object {
+            "city": "unknown",
+            "contact": "unknown",
+            "email": "unknown",
+            "firstName": "unknown",
+            "lastName": "unknown",
+            "phone": "unknown",
+            "state": "unknown",
+            "street": "unknown",
+            "website": "unknown",
+            "zip": "unknown",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <WithStyles(Dialog)
+        aria-labelledby="form-dialog-title"
+        onClose={[Function]}
+        open={undefined}
+>
+        <WithStyles(DialogTitle)
+                id="form-dialog-title"
+        >
+                Edit Address
+        </WithStyles(DialogTitle)>
+        <WithStyles(DialogContent)>
+                <WithStyles(DialogContentText)>
+                        Fill in the fields of the address record.
+                </WithStyles(DialogContentText)>
+                <WithStyles(AddressEditFields)
+                        address={
+                                Object {
+                                        "city": "unknown",
+                                        "contact": "unknown",
+                                        "email": "unknown",
+                                        "firstName": "unknown",
+                                        "lastName": "unknown",
+                                        "phone": "unknown",
+                                        "state": "unknown",
+                                        "street": "unknown",
+                                        "website": "unknown",
+                                        "zip": "unknown",
+                                      }
+                        }
+                        addressChangedByUser={[Function]}
+                />
+        </WithStyles(DialogContent)>
+        <WithStyles(DialogActions)>
+                <WithStyles(Button)
+                        color="primary"
+                        id="cancel"
+                        onClick={[Function]}
+                >
+                        Cancel
+                </WithStyles(Button)>
+                <WithStyles(Button)
+                        color="primary"
+                        onClick={[Function]}
+                >
+                        Ok
+                </WithStyles(Button)>
+        </WithStyles(DialogActions)>
+</WithStyles(Dialog)>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "aria-labelledby": "form-dialog-title",
+        "children": Array [
+          <WithStyles(DialogTitle)
+            id="form-dialog-title"
+>
+            Edit Address
+</WithStyles(DialogTitle)>,
+          <WithStyles(DialogContent)>
+            <WithStyles(DialogContentText)>
+                        Fill in the fields of the address record.
+            </WithStyles(DialogContentText)>
+            <WithStyles(AddressEditFields)
+                        address={
+                                    Object {
+                                                "city": "unknown",
+                                                "contact": "unknown",
+                                                "email": "unknown",
+                                                "firstName": "unknown",
+                                                "lastName": "unknown",
+                                                "phone": "unknown",
+                                                "state": "unknown",
+                                                "street": "unknown",
+                                                "website": "unknown",
+                                                "zip": "unknown",
+                                              }
+                        }
+                        addressChangedByUser={[Function]}
+            />
+</WithStyles(DialogContent)>,
+          <WithStyles(DialogActions)>
+            <WithStyles(Button)
+                        color="primary"
+                        id="cancel"
+                        onClick={[Function]}
+            >
+                        Cancel
+            </WithStyles(Button)>
+            <WithStyles(Button)
+                        color="primary"
+                        onClick={[Function]}
+            >
+                        Ok
+            </WithStyles(Button)>
+</WithStyles(DialogActions)>,
+        ],
+        "onClose": [Function],
+        "open": undefined,
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": "Edit Address",
+            "id": "form-dialog-title",
+          },
+          "ref": null,
+          "rendered": "Edit Address",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(DialogContentText)>
+                Fill in the fields of the address record.
+</WithStyles(DialogContentText)>,
+              <WithStyles(AddressEditFields)
+                address={
+                                Object {
+                                                "city": "unknown",
+                                                "contact": "unknown",
+                                                "email": "unknown",
+                                                "firstName": "unknown",
+                                                "lastName": "unknown",
+                                                "phone": "unknown",
+                                                "state": "unknown",
+                                                "street": "unknown",
+                                                "website": "unknown",
+                                                "zip": "unknown",
+                                              }
+                }
+                addressChangedByUser={[Function]}
+/>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Fill in the fields of the address record.",
+              },
+              "ref": null,
+              "rendered": "Fill in the fields of the address record.",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "address": Object {
+                  "city": "unknown",
+                  "contact": "unknown",
+                  "email": "unknown",
+                  "firstName": "unknown",
+                  "lastName": "unknown",
+                  "phone": "unknown",
+                  "state": "unknown",
+                  "street": "unknown",
+                  "website": "unknown",
+                  "zip": "unknown",
+                },
+                "addressChangedByUser": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "children": Array [
+              <WithStyles(Button)
+                color="primary"
+                id="cancel"
+                onClick={[Function]}
+>
+                Cancel
+</WithStyles(Button)>,
+              <WithStyles(Button)
+                color="primary"
+                onClick={[Function]}
+>
+                Ok
+</WithStyles(Button)>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Cancel",
+                "color": "primary",
+                "id": "cancel",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Cancel",
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "class",
+              "props": Object {
+                "children": "Ok",
+                "color": "primary",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Ok",
+              "type": [Function],
+            },
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <WithStyles(Dialog)
+          aria-labelledby="form-dialog-title"
+          onClose={[Function]}
+          open={undefined}
+>
+          <WithStyles(DialogTitle)
+                    id="form-dialog-title"
+          >
+                    Edit Address
+          </WithStyles(DialogTitle)>
+          <WithStyles(DialogContent)>
+                    <WithStyles(DialogContentText)>
+                              Fill in the fields of the address record.
+                    </WithStyles(DialogContentText)>
+                    <WithStyles(AddressEditFields)
+                              address={
+                                        Object {
+                                                  "city": "unknown",
+                                                  "contact": "unknown",
+                                                  "email": "unknown",
+                                                  "firstName": "unknown",
+                                                  "lastName": "unknown",
+                                                  "phone": "unknown",
+                                                  "state": "unknown",
+                                                  "street": "unknown",
+                                                  "website": "unknown",
+                                                  "zip": "unknown",
+                                                }
+                              }
+                              addressChangedByUser={[Function]}
+                    />
+          </WithStyles(DialogContent)>
+          <WithStyles(DialogActions)>
+                    <WithStyles(Button)
+                              color="primary"
+                              id="cancel"
+                              onClick={[Function]}
+                    >
+                              Cancel
+                    </WithStyles(Button)>
+                    <WithStyles(Button)
+                              color="primary"
+                              onClick={[Function]}
+                    >
+                              Ok
+                    </WithStyles(Button)>
+          </WithStyles(DialogActions)>
+</WithStyles(Dialog)>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "aria-labelledby": "form-dialog-title",
+          "children": Array [
+            <WithStyles(DialogTitle)
+              id="form-dialog-title"
+>
+              Edit Address
+</WithStyles(DialogTitle)>,
+            <WithStyles(DialogContent)>
+              <WithStyles(DialogContentText)>
+                            Fill in the fields of the address record.
+              </WithStyles(DialogContentText)>
+              <WithStyles(AddressEditFields)
+                            address={
+                                          Object {
+                                                        "city": "unknown",
+                                                        "contact": "unknown",
+                                                        "email": "unknown",
+                                                        "firstName": "unknown",
+                                                        "lastName": "unknown",
+                                                        "phone": "unknown",
+                                                        "state": "unknown",
+                                                        "street": "unknown",
+                                                        "website": "unknown",
+                                                        "zip": "unknown",
+                                                      }
+                            }
+                            addressChangedByUser={[Function]}
+              />
+</WithStyles(DialogContent)>,
+            <WithStyles(DialogActions)>
+              <WithStyles(Button)
+                            color="primary"
+                            id="cancel"
+                            onClick={[Function]}
+              >
+                            Cancel
+              </WithStyles(Button)>
+              <WithStyles(Button)
+                            color="primary"
+                            onClick={[Function]}
+              >
+                            Ok
+              </WithStyles(Button)>
+</WithStyles(DialogActions)>,
+          ],
+          "onClose": [Function],
+          "open": undefined,
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": "Edit Address",
+              "id": "form-dialog-title",
+            },
+            "ref": null,
+            "rendered": "Edit Address",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <WithStyles(DialogContentText)>
+                  Fill in the fields of the address record.
+</WithStyles(DialogContentText)>,
+                <WithStyles(AddressEditFields)
+                  address={
+                                    Object {
+                                                      "city": "unknown",
+                                                      "contact": "unknown",
+                                                      "email": "unknown",
+                                                      "firstName": "unknown",
+                                                      "lastName": "unknown",
+                                                      "phone": "unknown",
+                                                      "state": "unknown",
+                                                      "street": "unknown",
+                                                      "website": "unknown",
+                                                      "zip": "unknown",
+                                                    }
+                  }
+                  addressChangedByUser={[Function]}
+/>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Fill in the fields of the address record.",
+                },
+                "ref": null,
+                "rendered": "Fill in the fields of the address record.",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "address": Object {
+                    "city": "unknown",
+                    "contact": "unknown",
+                    "email": "unknown",
+                    "firstName": "unknown",
+                    "lastName": "unknown",
+                    "phone": "unknown",
+                    "state": "unknown",
+                    "street": "unknown",
+                    "website": "unknown",
+                    "zip": "unknown",
+                  },
+                  "addressChangedByUser": [Function],
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "children": Array [
+                <WithStyles(Button)
+                  color="primary"
+                  id="cancel"
+                  onClick={[Function]}
+>
+                  Cancel
+</WithStyles(Button)>,
+                <WithStyles(Button)
+                  color="primary"
+                  onClick={[Function]}
+>
+                  Ok
+</WithStyles(Button)>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Cancel",
+                  "color": "primary",
+                  "id": "cancel",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Cancel",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "children": "Ok",
+                  "color": "primary",
+                  "onClick": [Function],
+                },
+                "ref": null,
+                "rendered": "Ok",
+                "type": [Function],
+              },
+            ],
+            "type": [Function],
+          },
+        ],
+        "type": [Function],
+      },
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

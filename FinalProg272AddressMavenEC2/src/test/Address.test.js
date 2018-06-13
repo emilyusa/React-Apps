@@ -17,6 +17,11 @@ describe('Address tests', function() {
         }
     });
 
+    it('should take an AddressShow snapshot', () => {
+        const elfTree = shallow(<Address address={addresses[0]}/>);
+        expect(elfTree).toMatchSnapshot();
+    });
+
     it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(
@@ -27,14 +32,6 @@ describe('Address tests', function() {
         );
         ReactDOM.unmountComponentAtNode(div);
     });
-
-    // let  wrapper = null;
-    //
-    // beforeEach(() => {
-    //     wrapper = shallow(<Address
-    //         dataManager={dataManager}
-    //         addressList={addresses} />);
-    // });
 
     const addressProp = wrapper =>
         wrapper.find('WithStyles(AddressShow)').prop('address');
@@ -157,17 +154,18 @@ describe('Address tests', function() {
             });
         });
     };
-    /////
+
+
     it('renders state of firstName after setAddress()', () => {
         const wrapper = shallow(
             <Address dataManager={dataManager} addressList={addresses} />
         );
-        afterClickFieldTest(wrapper, () => {
+        setAddressFieldTest(wrapper, () => {
             expect(addressProp(wrapper).firstName).toEqual('Robert');
         });
     });
 
-    ////////
+
 
     it('renders state of lastName after button click', () => {
         const wrapper = shallow(
