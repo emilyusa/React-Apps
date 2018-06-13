@@ -30,7 +30,6 @@ export default class Address extends React.Component {
                 if (!this.canceled) {
                     this.setState({ addressList: addressListFromServer });
                     this.setState({ index: 0 });
-                    //console.log(this.addressList.result);
                 }
             })
             .catch(ex => {
@@ -39,30 +38,37 @@ export default class Address extends React.Component {
     };
 
     setAddress = (offset, goToFirst) => {
-        // if (offset === 0) {
-        //     const middlebutton = tempAddressList[1];
-        //     this.setState({
-        //         address: middlebutton
-        //     });
-        // } else {
-        var tempIndex = this.state.addressIndex;
-        if (goToFirst === 0) {
-            tempIndex += offset;
-            if (tempIndex > 99) {
-                tempIndex = 99;
-            } else if (tempIndex < 0) {
+        if (offset === 0 && goToFirst == 0) {
+            const middlebutton = tempAddressList[1];
+            this.setState({
+                address: middlebutton
+            });
+        } else {
+            const length = this.state.addressList.result.length - 1;
+            var tempIndex = this.state.addressIndex;
+            if (goToFirst === 0) {
+                tempIndex += offset;
+                if (tempIndex > length) {
+                    tempIndex = length;
+                } else if (tempIndex < 0) {
+                    tempIndex = 0;
+                }
+            } else if (goToFirst == -1) {
                 tempIndex = 0;
+            } else if (goToFirst == 1) {
+                tempIndex = length;
             }
-        } else if (goToFirst == -1) {
-            tempIndex = 0;
-        } else if (goToFirst == 1) {
-            tempIndex = 99;
+            if (offset === 0 && goToFirst == 0) {
+                const middlebutton = tempAddressList[1];
+                this.setState({
+                    address: middlebutton
+                });
+            }
+            this.setState({
+                addressIndex: tempIndex,
+                address: this.state.addressList.result[tempIndex]
+            });
         }
-        this.setState({
-            addressIndex: tempIndex,
-            address: this.state.addressList.result[tempIndex]
-        });
-        // }
     };
 
     render() {

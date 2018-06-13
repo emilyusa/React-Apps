@@ -8,7 +8,6 @@ import Address from "../Address";
 import { Route } from 'react-router-native';
 import GetFile from "../GetFile";
 
-
 configure({adapter:new Adapter()});
 
 describe('jest test', function() {

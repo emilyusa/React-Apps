@@ -4,6 +4,7 @@ exports[`jest test ElfHeader renders without crashing 1`] = `
 <View
   style={
     Object {
+      "backgroundColor": "skyblue",
       "flexDirection": "row",
       "justifyContent": "space-around",
     }
@@ -41,7 +42,7 @@ exports[`jest test ElfHeader renders without crashing 1`] = `
       ellipsizeMode="tail"
       style={null}
     >
-      Address
+      Home
     </Text>
   </View>
   <View

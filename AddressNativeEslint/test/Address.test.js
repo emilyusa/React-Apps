@@ -43,7 +43,7 @@ describe('Address tests', function() {
     const afterClickFieldTest = (wrapper, finder) => {
         setImmediate(() => {
             wrapper.update();
-            wrapper.instance().setAddress(0);
+            wrapper.instance().setAddress(0, 0);
             setImmediate(() => {
                 wrapper.update();
                 try {

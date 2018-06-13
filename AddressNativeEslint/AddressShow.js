@@ -75,14 +75,6 @@ export default class AddressShow extends React.Component {
                             }
                         />
                     </View>
-                    {/*<View style={{flex:1}}>*/}
-                    {/*<Button*/}
-                    {/*id="setAddress"*/}
-                    {/*color="darkturquoise"*/}
-                    {/*title="||"*/}
-                    {/*onPress={event => this.props.setAddress(0,0, event)}*/}
-                    {/*/>*/}
-                    {/*</View>*/}
                     <View style={{ flex: 1 }}>
                         <Button
                             id="Forward"
