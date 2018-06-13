@@ -20,7 +20,7 @@ describe('App test', function() {
     });
 
     it('should take an App snapshot', () => {
-        const elfTree = shallow(<App/>);
+        const elfTree = shallow(<App />);
         expect(elfTree).toMatchSnapshot();
     });
 

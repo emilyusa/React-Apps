@@ -3,7 +3,6 @@ import { configure, shallow } from 'enzyme/build/index';
 import Adapter from 'enzyme-adapter-react-16/build/index';
 import AddressEditFields from '../components/AddressEditFields';
 
-
 configure({ adapter: new Adapter() });
 
 describe('AddressEditFields test', function() {
@@ -19,7 +18,9 @@ describe('AddressEditFields test', function() {
     ];
 
     it('should take an AddressEditFields snapshot', () => {
-        const elfTree = shallow(<AddressEditFields addressList={addresses[0]}/>);
+        const elfTree = shallow(
+            <AddressEditFields addressList={addresses[0]} />
+        );
         expect(elfTree).toMatchSnapshot();
     });
 
@@ -39,14 +40,14 @@ describe('AddressEditFields test', function() {
 
     it('renders and displays the first name after edit', () => {
         const wrapper = shallow(
-            <AddressEditFields  addressList={addresses[1]} />
+            <AddressEditFields addressList={addresses[1]} />
         );
         expect(wrapper.prop('addressList').firstName).toBe('Chunyan');
     });
 
     it('renders and displays the last name after edit', () => {
         const wrapper = shallow(
-            <AddressEditFields  addressList={addresses[1]} />
+            <AddressEditFields addressList={addresses[1]} />
         );
         expect(wrapper.prop('addressList').lastName).toBe('Li');
     });

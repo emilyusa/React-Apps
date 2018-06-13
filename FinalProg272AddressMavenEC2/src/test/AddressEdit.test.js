@@ -22,7 +22,7 @@ describe('AddressEdit test', function() {
     });
 
     it('should take an AddressEdit snapshot', () => {
-        const elfTree = shallow(<AddressEdit address={address}/>);
+        const elfTree = shallow(<AddressEdit address={address} />);
         expect(elfTree).toMatchSnapshot();
     });
 

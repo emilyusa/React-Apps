@@ -9,7 +9,6 @@ import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
 configure({ adapter: new Adapter() });
 
 describe('Home test', function() {
-
     it('should take an Home snapshot', () => {
         const elfTree = shallow(<Home />);
         expect(elfTree).toMatchSnapshot();
@@ -37,5 +36,4 @@ describe('Home test', function() {
         const welcome = <h1>Welcome to the React World</h1>;
         expect(wrapper.dive().containsMatchingElement(welcome)).toBe(true);
     });
-
 });

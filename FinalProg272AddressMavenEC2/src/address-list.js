@@ -10,19 +10,23 @@ const addresses = [
         phone: unknown,
         website: unknown,
         email: unknown,
-        contact: unknown
+        contact: unknown,
+        _id: unknown,
+        _rev: unknown
     },
     {
-        firstName: 'Chunyan',
-        lastName: 'Li',
-        street: '4190 129th PL SE',
-        city: 'Bellevue',
+        firstName: 'Patty',
+        lastName: 'Murray',
+        street: '154 Russell Senate Office Building',
+        city: 'Washington DC',
         state: 'WA',
-        zip: '98006',
-        phone: '425-247-5300',
-        website: 'www.google.com',
-        email: 'emilyusa@yahoo.com',
-        contact: 'family'
+        zip: ' 20510',
+        phone: '202-224-2621',
+        website: 'https://www.murray.senate.gov/public',
+        email: '',
+        contact: 'http://www.murray.senate.gov/public/index.cfm/contactme',
+        _id: '5849dc86-72b9-4fe2-8a08-5d2f43cddb93',
+        _rev: '1-b8d1d561e7ba4b2db84814aa212cbad0'
     }
 ];
 

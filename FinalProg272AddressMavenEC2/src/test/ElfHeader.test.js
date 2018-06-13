@@ -60,7 +60,7 @@ describe('ElfHeader test', function() {
     );
 
     it('should take an ElfHeader snapshot', () => {
-        const elfTree = shallow(<ElfHeader/>);
+        const elfTree = shallow(<ElfHeader />);
         expect(elfTree).toMatchSnapshot();
     });
 

@@ -3,6 +3,7 @@ import '../App.css';
 import AddressShow from './AddressShow';
 import PropTypes from 'prop-types';
 import PouchDB from 'pouchdb';
+import addresses from '../address-list';
 
 class Address extends Component {
     constructor(props) {
@@ -84,9 +85,13 @@ class Address extends Component {
     };
 
     setAddress = offset => {
-        const value = this.state.namesIndex + offset;
-        if (value >= 0 && value <= this.state.names.length - 1) {
-            this.setState({ namesIndex: value, open: this.state.editOpen });
+        if (offset === 0) {
+            this.setState({ names: addresses[1], open: this.state.editOpen });
+        } else {
+            const value = this.state.namesIndex + offset;
+            if (value >= 0 && value <= this.state.names.length - 1) {
+                this.setState({ namesIndex: value, open: this.state.editOpen });
+            }
         }
     };
 

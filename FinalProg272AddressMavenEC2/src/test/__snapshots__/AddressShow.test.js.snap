@@ -7,6 +7,8 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <WithStyles(AddressShow)
     address={
         Object {
+            "_id": "unknown",
+            "_rev": "unknown",
             "city": "unknown",
             "contact": "unknown",
             "email": "unknown",
@@ -33,6 +35,8 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "address": Object {
+        "_id": "unknown",
+        "_rev": "unknown",
         "city": "unknown",
         "contact": "unknown",
         "email": "unknown",
@@ -61,6 +65,8 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "address": Object {
+          "_id": "unknown",
+          "_rev": "unknown",
           "city": "unknown",
           "contact": "unknown",
           "email": "unknown",
